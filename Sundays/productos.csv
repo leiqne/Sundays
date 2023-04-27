@@ -1,0 +1,33 @@
+﻿Codigo;Producto;Categoria;Precio
+AC001;Aros de cebolla;Entradas;19.90
+NS002;Nachos supremos;Entradas;26.90
+AP003;Alitas de pollo;Entradas;29.90
+HF004;Hamburguesa Fridays;Platos principales;44.90
+FP005;Fajitas de pollo;Platos principales;49.90
+CC006;Costillas de cerdo;Platos principales;54.90
+BC007;Brownie de chocolate;Postres;19.90
+CF008;Cheesecake de fresa;Postres;21.90
+HS009;Helado sundae;Postres;15.90
+ML010;Margarita de limón;Bebidas;27.90
+MM011;Mojito de menta;Bebidas;29.90
+LF012;Limonada de fresa;Bebidas;16.90
+EC013;Ensalada César con pollo;Platos principales;39.90
+PQ014;Papas fritas con queso;Entradas;24.90
+QP015;Quesadillas de pollo;Entradas;34.90
+PP016;Pizza de pepperoni;Platos principales;42.90
+EC017;Ensalada de camarones;Platos principales;49.90
+SQ018;Sandwich de carne y queso;Platos principales;38.90
+EF019;Ensalada de frutas;Postres;16.90
+FV020;Flan de vainilla;Postres;17.90
+HC021;Helado de chocolate;Postres;14.90
+DF022;Daiquiri de fresa;Bebidas;25.90
+MM023;Margarita de mango;Bebidas;29.90
+CC024;Cerveza Corona;Bebidas;16.90
+PS025;Pisco Sour;Bebidas;32.90
+GT026;Gin Tonic;Bebidas;35.90
+CC027;Coca-Cola;Bebidas;8.90
+AM028;Agua mineral sin gas;Bebidas;6.90
+LF029;Limonada frozen;Bebidas;19.90
+CA030;Café americano;Bebidas;9.90
+TD031;Té helado de durazno;Bebidas;11.90
+BC032;Brochetas de camarones;Entradas;39.90
