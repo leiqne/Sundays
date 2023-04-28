@@ -1,4 +1,6 @@
 #pragma once
+#include "Lista.h"
+#include "Cliente.h"
 #include "funciones.h"
 #include <string>
 namespace Sundays {
@@ -19,6 +21,7 @@ namespace Sundays {
 		MyForm(void)
 		{
 			InitializeComponent();
+			productos = Funciones::CargarProductos("productos.csv");
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -46,6 +49,9 @@ namespace Sundays {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
+		/// 
+		Lista<Producto>* productos = new Lista<Producto>();
+		Cliente* cliente = new Cliente();
 		Color SelectedColor = Color::FromArgb(250, 250, 250);
 		System::ComponentModel::Container ^components;
 
@@ -136,12 +142,8 @@ namespace Sundays {
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		carta->BackColor = SelectedColor;
-		Lista<string> Zorra;
-		Zorra.push_front("hola");
-		Zorra.push_front("chau");
-		Zorra.push_front("setso");
-		Zorra.print();
+		bool res = cliente->registro("cris", "Christian", "hello");
+		cout << "estado registro: " << res << endl;
 
 	}
 };

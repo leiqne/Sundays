@@ -1,16 +1,20 @@
+#ifndef LISTA_H
+#define LISTA_H
 
 #include <functional>
 #include <conio.h>
 #include <iostream>
+
 using namespace std;
-template <typename T>
+template <class T>
 struct Nodo {
     T element;
     Nodo<T>* next;
     Nodo<T>* prev;
     Nodo(T c) { element = c; next = nullptr; prev = nullptr; }
 };
-template <typename T>
+
+template <class T>
 class Lista
 {
 private:
@@ -60,4 +64,4 @@ public:
     }
 
 };
-
+#endif // DEBUG

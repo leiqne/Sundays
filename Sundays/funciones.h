@@ -6,8 +6,5 @@
 
 namespace Funciones {
 
-    Lista<Producto>* CargarProductos(std::string path) {
-        Lista<Producto>*zorra2;
-        return zorra2;
-    }
+    Lista<Producto>* CargarProductos(std::string path);
 };
