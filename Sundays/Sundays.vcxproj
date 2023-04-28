@@ -124,6 +124,7 @@
     <ClCompile Include="Crypt.cpp" />
     <ClCompile Include="CSVparser.cpp" />
     <ClCompile Include="funciones.cpp" />
+    <ClCompile Include="Login.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Producto.cpp" />
   </ItemGroup>
@@ -134,12 +135,18 @@
     <ClInclude Include="CSVparser.hpp" />
     <ClInclude Include="funciones.h" />
     <ClInclude Include="Lista.h" />
+    <ClInclude Include="Login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Producto.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

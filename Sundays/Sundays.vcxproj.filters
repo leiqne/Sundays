@@ -34,6 +34,7 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Crypt.cpp">
+    <ClCompile Include="Login.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -60,6 +61,7 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Crypt.h">
+    <ClInclude Include="Login.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
