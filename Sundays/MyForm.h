@@ -225,9 +225,6 @@ namespace Sundays {
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		bool res = cliente->registro("cris", "Christian", "hello");
-		cout << "estado registro: " << res << endl;
-
 		cookies->BorderStyle = System::Windows::Forms::BorderStyle::None;
 		aceptar_c->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 		aceptar_c->FlatAppearance->BorderSize = 0;//quitar el borde
