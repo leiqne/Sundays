@@ -1,9 +1,11 @@
 #pragma once
-#include "Lista.h"
+#include "Carrito.h"
 #include "Cliente.h"
 #include "funciones.h"
+#include "TipoPago.h"
 #include <string>
 #include "Login.h"
+
 namespace Sundays {
 
 	using namespace System;
@@ -52,7 +54,8 @@ namespace Sundays {
 		/// Variable del dise�ador necesaria.
 		/// </summary>
 		/// 
-		Lista<Producto>* productos = new Lista<Producto>();
+		MiVector<Producto>* productos = new MiVector<Producto>();
+		CarritoDeCompras* carritoCompras = new CarritoDeCompras();
 		Cliente* cliente = new Cliente();
 		Graphics^ gr;
 		Color SelectedColor = Color::FromArgb(250, 250, 250);

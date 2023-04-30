@@ -13,4 +13,7 @@ public:
 	std::string getCategoria();
 	std::string getCodigo();
 	float getPrecio();
+	bool operator==(const Producto& prod) {
+		return codigo == prod.codigo;
+	}
 };

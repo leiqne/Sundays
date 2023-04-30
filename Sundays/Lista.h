@@ -43,8 +43,8 @@ public:
             Nodo<T>* _new = new Nodo<T>(e);
             _new->next = start;
             start = _new;
-            ++size;
         }
+        ++size;
     }
     void push_front(T e) {
         Nodo<T>* _new = new Nodo<T>(e);

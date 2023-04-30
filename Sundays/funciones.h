@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
-#include "Lista.h"
+#include "MiVector.h"
 #include "Producto.h"
 #include "CSVparser.hpp"
 
 namespace Funciones {
 
-    Lista<Producto>* CargarProductos(std::string path);
+    MiVector<Producto>* CargarProductos(std::string path);
 };

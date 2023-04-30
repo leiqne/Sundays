@@ -1,6 +1,6 @@
 #pragma once
 #include "Cliente.h"
-#include "Producto.h"
+#include "Carrito.h"
 #include "Lista.h"
 #include <iostream>
 #include <string>
@@ -9,11 +9,11 @@
 class Compra {
 	string filename = "compras.csv";
 	float monto;
-	std::string hash, fecha;
+	std::string UUID, fecha;
 	Cliente cliente;
-	Lista<Producto> productos;
+	CarritoDeCompras carrito;
 public:
 	Compra();
-	Compra(Cliente client, Lista<Producto> products);
+	Compra(Cliente client, const CarritoDeCompras&);
 	void Guardar();
 };
