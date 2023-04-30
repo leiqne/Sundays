@@ -29,6 +29,8 @@ namespace Sundays {
 			//TODO: agregar c�digo de constructor aqu�
 			//
 			gr = this->CreateGraphics();
+			this->SetStyle(ControlStyles::AllPaintingInWmPaint | ControlStyles::UserPaint | ControlStyles::Opaque, true);
+			this->UpdateStyles();
 		}
 
 	protected:
@@ -59,13 +61,22 @@ namespace Sundays {
 		Cliente* cliente = new Cliente();
 		Graphics^ gr;
 		Color SelectedColor = Color::FromArgb(250, 250, 250);
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
 	private: System::Windows::Forms::TextBox^ cookies;
 	private: System::Windows::Forms::Button^ aceptar_c;
 	private: System::Windows::Forms::Button^ carta;
 	private: System::Windows::Forms::Button^ infocookies;
 	private: System::Windows::Forms::Button^ btn_login;
 	private: System::Windows::Forms::Button^ btnPerfil;
+	private: System::Windows::Forms::Panel^ pnl_contenedor;
+
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ prueba;
+
+
+
+
 
 
 
@@ -81,15 +92,18 @@ namespace Sundays {
 			   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			   this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			   this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			   this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			   this->cookies = (gcnew System::Windows::Forms::TextBox());
 			   this->aceptar_c = (gcnew System::Windows::Forms::Button());
 			   this->carta = (gcnew System::Windows::Forms::Button());
 			   this->infocookies = (gcnew System::Windows::Forms::Button());
 			   this->btn_login = (gcnew System::Windows::Forms::Button());
 			   this->btnPerfil = (gcnew System::Windows::Forms::Button());
+			   this->pnl_contenedor = (gcnew System::Windows::Forms::Panel());
+			   this->prueba = (gcnew System::Windows::Forms::Label());
+			   this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			   this->pnl_contenedor->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			   this->SuspendLayout();
 			   // 
@@ -98,10 +112,9 @@ namespace Sundays {
 			   this->pictureBox2->BackColor = System::Drawing::Color::White;
 			   this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
 			   this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->pictureBox2->Location = System::Drawing::Point(-4, 0);
-			   this->pictureBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			   this->pictureBox2->Location = System::Drawing::Point(-3, 0);
 			   this->pictureBox2->Name = L"pictureBox2";
-			   this->pictureBox2->Size = System::Drawing::Size(1845, 169);
+			   this->pictureBox2->Size = System::Drawing::Size(1384, 137);
 			   this->pictureBox2->TabIndex = 1;
 			   this->pictureBox2->TabStop = false;
 			   // 
@@ -109,23 +122,11 @@ namespace Sundays {
 			   // 
 			   this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
 			   this->pictureBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->pictureBox3->Location = System::Drawing::Point(105, 17);
-			   this->pictureBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			   this->pictureBox3->Location = System::Drawing::Point(79, 14);
 			   this->pictureBox3->Name = L"pictureBox3";
-			   this->pictureBox3->Size = System::Drawing::Size(185, 73);
+			   this->pictureBox3->Size = System::Drawing::Size(139, 59);
 			   this->pictureBox3->TabIndex = 2;
 			   this->pictureBox3->TabStop = false;
-			   // 
-			   // pictureBox1
-			   // 
-			   this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			   this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			   this->pictureBox1->Location = System::Drawing::Point(24, 204);
-			   this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			   this->pictureBox1->Name = L"pictureBox1";
-			   this->pictureBox1->Size = System::Drawing::Size(1781, 318);
-			   this->pictureBox1->TabIndex = 4;
-			   this->pictureBox1->TabStop = false;
 			   // 
 			   // cookies
 			   // 
@@ -135,12 +136,11 @@ namespace Sundays {
 				   static_cast<System::Byte>(0)));
 			   this->cookies->ForeColor = System::Drawing::Color::White;
 			   this->cookies->HideSelection = false;
-			   this->cookies->Location = System::Drawing::Point(213, 958);
-			   this->cookies->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			   this->cookies->Location = System::Drawing::Point(160, 778);
 			   this->cookies->Multiline = true;
 			   this->cookies->Name = L"cookies";
 			   this->cookies->ReadOnly = true;
-			   this->cookies->Size = System::Drawing::Size(1284, 95);
+			   this->cookies->Size = System::Drawing::Size(964, 78);
 			   this->cookies->TabIndex = 6;
 			   this->cookies->TabStop = false;
 			   this->cookies->Text = resources->GetString(L"cookies.Text");
@@ -152,10 +152,9 @@ namespace Sundays {
 			   this->aceptar_c->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->aceptar_c->Font = (gcnew System::Drawing::Font(L"Impact", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->aceptar_c->Location = System::Drawing::Point(1633, 974);
-			   this->aceptar_c->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			   this->aceptar_c->Location = System::Drawing::Point(1225, 791);
 			   this->aceptar_c->Name = L"aceptar_c";
-			   this->aceptar_c->Size = System::Drawing::Size(109, 46);
+			   this->aceptar_c->Size = System::Drawing::Size(82, 37);
 			   this->aceptar_c->TabIndex = 7;
 			   this->aceptar_c->Text = L"ACEPTAR";
 			   this->aceptar_c->UseVisualStyleBackColor = false;
@@ -167,10 +166,9 @@ namespace Sundays {
 			   this->carta->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->carta->Font = (gcnew System::Drawing::Font(L"Impact", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->carta->Location = System::Drawing::Point(329, 37);
-			   this->carta->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			   this->carta->Location = System::Drawing::Point(247, 30);
 			   this->carta->Name = L"carta";
-			   this->carta->Size = System::Drawing::Size(93, 31);
+			   this->carta->Size = System::Drawing::Size(70, 25);
 			   this->carta->TabIndex = 8;
 			   this->carta->Text = L"CARTA";
 			   this->carta->UseVisualStyleBackColor = false;
@@ -182,10 +180,9 @@ namespace Sundays {
 			   this->infocookies->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->infocookies->ForeColor = System::Drawing::Color::Transparent;
-			   this->infocookies->Location = System::Drawing::Point(211, 1003);
-			   this->infocookies->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			   this->infocookies->Location = System::Drawing::Point(158, 815);
 			   this->infocookies->Name = L"infocookies";
-			   this->infocookies->Size = System::Drawing::Size(216, 28);
+			   this->infocookies->Size = System::Drawing::Size(162, 23);
 			   this->infocookies->TabIndex = 9;
 			   this->infocookies->Text = L"Como eliminar las cookies";
 			   this->infocookies->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -199,10 +196,9 @@ namespace Sundays {
 			   this->btn_login->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			   this->btn_login->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->btn_login->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			   this->btn_login->Location = System::Drawing::Point(1496, 37);
-			   this->btn_login->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			   this->btn_login->Location = System::Drawing::Point(1122, 30);
 			   this->btn_login->Name = L"btn_login";
-			   this->btn_login->Size = System::Drawing::Size(301, 44);
+			   this->btn_login->Size = System::Drawing::Size(226, 36);
 			   this->btn_login->TabIndex = 10;
 			   this->btn_login->UseVisualStyleBackColor = false;
 			   this->btn_login->Click += gcnew System::EventHandler(this, &MyForm::btn_login_Click);
@@ -213,31 +209,61 @@ namespace Sundays {
 			   this->btnPerfil->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->btnPerfil->Font = (gcnew System::Drawing::Font(L"Impact", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->btnPerfil->Location = System::Drawing::Point(1496, 37);
-			   this->btnPerfil->Margin = System::Windows::Forms::Padding(4);
+			   this->btnPerfil->Location = System::Drawing::Point(1122, 30);
 			   this->btnPerfil->Name = L"btnPerfil";
-			   this->btnPerfil->Size = System::Drawing::Size(309, 46);
+			   this->btnPerfil->Size = System::Drawing::Size(232, 37);
 			   this->btnPerfil->TabIndex = 11;
 			   this->btnPerfil->UseVisualStyleBackColor = false;
 			   this->btnPerfil->Visible = false;
 			   // 
+			   // pnl_contenedor
+			   // 
+			   this->pnl_contenedor->AutoScroll = true;
+			   this->pnl_contenedor->BackColor = System::Drawing::Color::Transparent;
+			   this->pnl_contenedor->Controls->Add(this->prueba);
+			   this->pnl_contenedor->Controls->Add(this->pictureBox1);
+			   this->pnl_contenedor->Location = System::Drawing::Point(12, 154);
+			   this->pnl_contenedor->Name = L"pnl_contenedor";
+			   this->pnl_contenedor->Size = System::Drawing::Size(1348, 604);
+			   this->pnl_contenedor->TabIndex = 12;
+			   this->pnl_contenedor->SizeChanged += gcnew System::EventHandler(this, &MyForm::pnl_contenedor_SizeChanged);
+			   this->pnl_contenedor->Resize += gcnew System::EventHandler(this, &MyForm::pnl_contenedor_Resize);
+			   // 
+			   // prueba
+			   // 
+			   this->prueba->AutoSize = true;
+			   this->prueba->Location = System::Drawing::Point(53, 282);
+			   this->prueba->Name = L"prueba";
+			   this->prueba->Size = System::Drawing::Size(0, 13);
+			   this->prueba->TabIndex = 1;
+			   // 
+			   // pictureBox1
+			   // 
+			   this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			   this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			   this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->pictureBox1->Location = System::Drawing::Point(44, 12);
+			   this->pictureBox1->Name = L"pictureBox1";
+			   this->pictureBox1->Size = System::Drawing::Size(1262, 239);
+			   this->pictureBox1->TabIndex = 0;
+			   this->pictureBox1->TabStop = false;
+			   // 
 			   // MyForm
 			   // 
-			   this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			   this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(250)), static_cast<System::Int32>(static_cast<System::Byte>(250)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(250)));
-			   this->ClientSize = System::Drawing::Size(1829, 1046);
+			   this->ClientSize = System::Drawing::Size(1372, 850);
+			   this->Controls->Add(this->cookies);
 			   this->Controls->Add(this->btnPerfil);
 			   this->Controls->Add(this->btn_login);
 			   this->Controls->Add(this->infocookies);
 			   this->Controls->Add(this->carta);
 			   this->Controls->Add(this->aceptar_c);
-			   this->Controls->Add(this->cookies);
-			   this->Controls->Add(this->pictureBox1);
 			   this->Controls->Add(this->pictureBox3);
 			   this->Controls->Add(this->pictureBox2);
-			   this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			   this->Controls->Add(this->pnl_contenedor);
 			   this->Name = L"MyForm";
 			   this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			   this->Text = L"MyForm";
@@ -245,6 +271,8 @@ namespace Sundays {
 			   this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::MyForm_Paint);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			   this->pnl_contenedor->ResumeLayout(false);
+			   this->pnl_contenedor->PerformLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
@@ -254,6 +282,7 @@ namespace Sundays {
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		pnl_contenedor->BackColor = Color::Transparent;
 		cookies->BorderStyle = System::Windows::Forms::BorderStyle::None;
 		aceptar_c->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 		aceptar_c->FlatAppearance->BorderSize = 0;//quitar el borde
@@ -263,6 +292,11 @@ namespace Sundays {
 		carta->FlatAppearance->BorderSize = 0;
 		btn_login->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 		btn_login->FlatAppearance->BorderSize = 0;
+		for (int i = 0; i < 200; i++)
+		{
+	
+			prueba->Text += System::Convert::ToString(i)+"\n";
+		}
 	}
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -281,14 +315,15 @@ namespace Sundays {
 	}
 	
 private: System::Void aceptar_c_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	aceptar_c->Visible = false;
 	cookies->Visible = false;
 	infocookies->Visible = false;
-
+	this->ClientSize = System::Drawing::Size(1372, 760);
 }
 private: System::Void infocookies_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ mensaje = "Cuando ingresas a un sitio online, es com�n que se genere y almacene un archivo llamado cookie en tu navegador. Las cookies almacenan informaci�n especifica de un usuario, como datos de autentificaci�n que te ayudan a mantener registrado en tus p�ginas web favoritas.\n\nTe recomendamos limpiar las cookies de tu navegador de forma regular, en especial si notas inconvenientes al ingresar y navegar por p�ginas web.\n\nChrome:\nAbre Google Chorme,\nHaz clic en el icono m�s en la esquina superior derecha,\nHaz clic en la configuraci�n,\nEn la parte inferior de la p�gina, haz clic en configuraci�n avanzada,\nBajo Privacidad y Seguridad, haz clic en Configuraci�n de Contenido,\nBajo Cookies, haz clic en ver todas las cookies,\nIngresa Fridays, en el buscar cookies,\nHaz clic en quitar,\nHacer clic en listo.";
-	MessageBox::Show(mensaje, "Informaci�n sobre cookies", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	String^ mensaje = "Cuando ingresas a un sitio online, es comun que se genere y almacene un archivo llamado cookie en tu navegador. Las cookies almacenan informaci�n especifica de un usuario, como datos de autentificaci�n que te ayudan a mantener registrado en tus p�ginas web favoritas.\n\nTe recomendamos limpiar las cookies de tu navegador de forma regular, en especial si notas inconvenientes al ingresar y navegar por p�ginas web.\n\nChrome:\nAbre Google Chorme,\nHaz clic en el icono m�s en la esquina superior derecha,\nHaz clic en la configuraci�n,\nEn la parte inferior de la p�gina, haz clic en configuraci�n avanzada,\nBajo Privacidad y Seguridad, haz clic en Configuraci�n de Contenido,\nBajo Cookies, haz clic en ver todas las cookies,\nIngresa Fridays, en el buscar cookies,\nHaz clic en quitar,\nHacer clic en listo.";
+	MessageBox::Show(mensaje, "Informacion sobre cookies", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 private: System::Void btn_login_Click(System::Object^ sender, System::EventArgs^ e) {
 	InicioS^ form2 = gcnew InicioS(cliente);
@@ -296,6 +331,12 @@ private: System::Void btn_login_Click(System::Object^ sender, System::EventArgs^
 		btnPerfil->Visible = true;
 		btnPerfil->Text = gcnew String(cliente->getNombre().c_str());
 	}
+}
+private: System::Void pnl_contenedor_SizeChanged(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void pnl_contenedor_Resize(System::Object^ sender, System::EventArgs^ e) {
+	this->Invalidate();
 }
 };
 }
