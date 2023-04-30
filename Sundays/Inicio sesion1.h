@@ -228,8 +228,9 @@ namespace Sundays {
 	private: System::Void IniciarSesion_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Visible=false;
 		Login^ login = gcnew Login(cliente);
-		login->ShowDialog();
-		this->Visible = true;
+		if (login->ShowDialog() == Windows::Forms::DialogResult::Yes) {
+			this->Close();
+		}else this->Visible = true;
 	}
 
 private: System::Void btn_aceptar_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -242,6 +243,7 @@ private: System::Void btn_aceptar_Click(System::Object^ sender, System::EventArg
 		if (cliente->login(email, password)) {
 			msg = gcnew String(("Bienvenido " + cliente->getNombre()).c_str());
 			MessageBox::Show(msg);
+			this->DialogResult = Windows::Forms::DialogResult::Yes;
 			this->Close();
 		}
 		else {

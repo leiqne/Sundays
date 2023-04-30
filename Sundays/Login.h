@@ -337,9 +337,9 @@ private: System::Void btn_aceptar_Click(System::Object^ sender, System::EventArg
 	string nombres = marshal_as<std::string>(txtNombres->Text);
 	if (cliente->registro(email, nombres, password)) {
 		MessageBox::Show("Registrado con exito");
+		this->DialogResult = Windows::Forms::DialogResult::Yes;
 		this->Close();
-	}
-	else {
+	} else {
 		MessageBox::Show("Ha ocurrido un error al registrarse");
 	}
 }
