@@ -82,6 +82,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -125,6 +126,7 @@
     <ClCompile Include="Crypt.cpp" />
     <ClCompile Include="CSVparser.cpp" />
     <ClCompile Include="funciones.cpp" />
+    <ClCompile Include="Inicio sesion1.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Producto.cpp" />
@@ -137,6 +139,9 @@
     <ClInclude Include="CSVparser.hpp" />
     <ClInclude Include="funciones.h" />
     <ClInclude Include="HistorialCompras.h" />
+    <ClInclude Include="Inicio sesion1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Lista.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
@@ -149,6 +154,9 @@
     <ClInclude Include="TipoPago.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Inicio sesion1.resx">
+      <DependentUpon>Inicio sesion1.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>

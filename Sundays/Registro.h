@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Inicio sesion.h"
 namespace Sundays {
 
 	using namespace System;
@@ -22,7 +22,6 @@ namespace Sundays {
 			//TODO: agregar código de constructor aquí
 			//
 			IniciarSesion->BackColor = Color::Transparent;
-			
 		}
 
 	protected:
@@ -46,8 +45,6 @@ namespace Sundays {
 	private: System::Windows::Forms::Button^ IniciarSesion;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ ojo1;
-	private: System::Windows::Forms::Button^ ojo2;
 
 	protected:
 
@@ -58,8 +55,6 @@ namespace Sundays {
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
-		bool confirmado1 = false;
-		bool confirmado2 = false;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -68,7 +63,6 @@ namespace Sundays {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Login::typeid));
 			this->Usuario = (gcnew System::Windows::Forms::Label());
 			this->Registro = (gcnew System::Windows::Forms::Label());
 			this->contrasenia = (gcnew System::Windows::Forms::Label());
@@ -79,8 +73,6 @@ namespace Sundays {
 			this->IniciarSesion = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->ojo1 = (gcnew System::Windows::Forms::Button());
-			this->ojo2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Usuario
@@ -199,37 +191,11 @@ namespace Sundays {
 			this->label1->TabIndex = 8;
 			this->label1->Text = L"Confirmar contraseña";
 			// 
-			// ojo1
-			// 
-			this->ojo1->BackColor = System::Drawing::Color::Transparent;
-			this->ojo1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ojo1.BackgroundImage")));
-			this->ojo1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->ojo1->Location = System::Drawing::Point(571, 106);
-			this->ojo1->Name = L"ojo1";
-			this->ojo1->Size = System::Drawing::Size(34, 29);
-			this->ojo1->TabIndex = 10;
-			this->ojo1->UseVisualStyleBackColor = false;
-			this->ojo1->Click += gcnew System::EventHandler(this, &Login::ojo1_Click);
-			// 
-			// ojo2
-			// 
-			this->ojo2->BackColor = System::Drawing::Color::Transparent;
-			this->ojo2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ojo2.BackgroundImage")));
-			this->ojo2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->ojo2->Location = System::Drawing::Point(571, 141);
-			this->ojo2->Name = L"ojo2";
-			this->ojo2->Size = System::Drawing::Size(34, 29);
-			this->ojo2->TabIndex = 11;
-			this->ojo2->UseVisualStyleBackColor = false;
-			this->ojo2->Click += gcnew System::EventHandler(this, &Login::ojo2_Click);
-			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(657, 284);
-			this->Controls->Add(this->ojo2);
-			this->Controls->Add(this->ojo1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->IniciarSesion);
@@ -244,7 +210,7 @@ namespace Sundays {
 			this->MinimizeBox = false;
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Login";
+			this->Text = L"Registro";
 			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -264,16 +230,7 @@ private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
 	btn_aceptar->FlatAppearance->BorderSize = 0;
 }
 private: System::Void IniciarSesion_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-private: System::Void ojo1_Click(System::Object^ sender, System::EventArgs^ e) {
-	textContra->UseSystemPasswordChar = confirmado1;
-	confirmado1 =! confirmado1;
 
-}
-private: System::Void ojo2_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox1->UseSystemPasswordChar = confirmado2;
-	confirmado2 =!confirmado2;
 }
 };
 }

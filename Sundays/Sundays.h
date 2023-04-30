@@ -1,11 +1,9 @@
 #pragma once
-#include "Carrito.h"
+#include "Lista.h"
 #include "Cliente.h"
 #include "funciones.h"
-#include "TipoPago.h"
 #include <string>
-#include "Inicio sesion1.h"
-
+#include "Inicio sesion.h"
 namespace Sundays {
 
 	using namespace System;
@@ -54,8 +52,7 @@ namespace Sundays {
 		/// Variable del dise�ador necesaria.
 		/// </summary>
 		/// 
-		MiVector<Producto>* productos = new MiVector<Producto>();
-		CarritoDeCompras* carritoCompras = new CarritoDeCompras();
+		Lista<Producto>* productos = new Lista<Producto>();
 		Cliente* cliente = new Cliente();
 		Graphics^ gr;
 		Color SelectedColor = Color::FromArgb(250, 250, 250);
@@ -212,9 +209,11 @@ namespace Sundays {
 			   this->Controls->Add(this->pictureBox1);
 			   this->Controls->Add(this->pictureBox3);
 			   this->Controls->Add(this->pictureBox2);
+			   this->MaximizeBox = false;
+			   this->MinimizeBox = false;
 			   this->Name = L"MyForm";
 			   this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			   this->Text = L"MyForm";
+			   this->Text = L"Sundays";
 			   this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			   this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::MyForm_Paint);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
