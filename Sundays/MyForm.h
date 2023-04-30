@@ -265,7 +265,7 @@ private: System::Void infocookies_Click(System::Object^ sender, System::EventArg
 	MessageBox::Show(mensaje, "Informaci�n sobre cookies", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 private: System::Void btn_login_Click(System::Object^ sender, System::EventArgs^ e) {
-	InicioS^ form2 = gcnew InicioS();
+	InicioS^ form2 = gcnew InicioS(cliente);
 	form2->ShowDialog();
 }
 };

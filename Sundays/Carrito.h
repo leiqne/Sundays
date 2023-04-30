@@ -5,7 +5,7 @@
 struct Item {
 	Producto producto;
 	int cant = 1;
-	bool operator==(Item& item) {
+	bool operator==(const Item& item) const {
 		return item.producto == producto;
 	}
 };

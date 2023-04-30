@@ -20,8 +20,8 @@ void CarritoDeCompras::eliminarProd(const Producto& prod){
 		return elemento.producto.getCodigo() == buscado.producto.getCodigo();
 		});
 	if (res != productos.end()) {
-		if (res->cant == 1);
-			//productos.remove(item);
+		if (res->cant == 1)
+			productos.remove(item);
 		else res->cant++;
 	}
 }

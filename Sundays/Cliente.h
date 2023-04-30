@@ -4,10 +4,11 @@
 
 class Cliente {
 	std::string filename = "usuarios.csv";
-	std::string username, password, nombre, UUID;
+	std::string email, password, nombre, UUID;
 public:
 	Cliente();
 	std::string getUUID();
-	bool login(std::string username, std::string pass);
-	bool registro(std::string username, std::string name, std::string password);
+	std::string getNombre();
+	bool login(std::string email, std::string pass);
+	bool registro(std::string email, std::string name, std::string password);
 };

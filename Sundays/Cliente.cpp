@@ -7,16 +7,17 @@ using namespace std;
 Cliente::Cliente() = default;
 
 string Cliente::getUUID() { return UUID; }
+string Cliente::getNombre() { return nombre; }
 
-bool Cliente::login(string username, string pass) {
+bool Cliente::login(string email, string pass) {
 	csv::Parser file = csv::Parser(filename);
 	int size = file.rowCount();
 	pass = Cripto::SHA256(pass).toString();
 	for (int i = 0; i < size; i++) {
-		if (file[i]["username"] == username && file[i]["password"] == pass) {
+		if (file[i]["email"] == email && file[i]["password"] == pass) {
 			nombre = file[i]["nombre"];
 			UUID = file[i]["uuid"];
-			this->username = file[i]["username"];
+			this->email = file[i]["email"];
 			password = file[i]["password"];
 			
 			return true;
@@ -25,19 +26,19 @@ bool Cliente::login(string username, string pass) {
 	return false;
 }
 
-bool Cliente::registro(string username, string name, string pass) {
+bool Cliente::registro(string email, string name, string pass) {
 	try {
 		UUID = Cripto::generateUUID();
 		csv::Parser file = csv::Parser(filename);
 		pass = Cripto::SHA256(pass).toString();
 		int size = file.rowCount();
 
-		vector<string> data = { UUID, username, name, pass };
+		vector<string> data = { UUID, email, name, pass };
 		file.addRow(size, data);
 		file.sync();
 
 		nombre = name, password = pass;
-		this->username = username;
+		this->email = email;
 
 		return true;
 	} catch (const csv::Error &e) {
