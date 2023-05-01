@@ -290,12 +290,13 @@ namespace Sundays {
 		carta->FlatAppearance->BorderSize = 0;
 		btn_login->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 		btn_login->FlatAppearance->BorderSize = 0;
+
 		for (int i = 0; i < 10; ++i) {
 			Producto producto = productos->at(i);
 
 			Button^ newbtn = gcnew Button();
 			newbtn->Size = System::Drawing::Size(190, 190);
-			newbtn->Text = gcnew String(producto.getNombre().c_str());
+			newbtn->Text =gcnew String(productos->at(i).getNombre().c_str())+"\n"+"Precio: S/ " + gcnew String(System::Convert::ToString(productos->at(i).getPrecio()));
 			newbtn->Font = gcnew System::Drawing::Font(newbtn->Font->FontFamily, 14, System::Drawing::FontStyle::Bold);
 			newbtn->ForeColor = System::Drawing::Color::White;
 			newbtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
