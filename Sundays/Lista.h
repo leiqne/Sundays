@@ -54,6 +54,25 @@ public:
         start = _new;
         ++size;
     }
+
+    void bubbleSort_V2(function<bool(Nodo*, Nodo*)> operador) {
+        bool intercambiado;
+        Nodo<T>* ptr1 = start; 
+        do {
+            intercambiado = false;
+            while (ptr1->next != nullptr) {
+                if (operador(ptr1, ptr1->next)) {
+                    /* auto aux = ptr1->elemento;
+                     ptr1->elemento = ptr1->next->elemento;
+                     ptr1->next->elemento = aux; */
+                    swap(ptr1->element, ptr1->next->element);
+                    intercambiado = true;
+                }
+                ptr1 = ptr1->next;
+            }
+        } while (intercambiado);
+    }
+
     void print() {
         Nodo<T>* tmp = start;
         while (tmp != nullptr) {
