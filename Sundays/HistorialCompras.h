@@ -12,9 +12,8 @@ public:
 		csv::Parser file = csv::Parser(filename);
 		int size = file.rowCount();
 		for (int i = 0; i < size; i++) {
-			auto fila = file[i].getValue<std::string*>(i);
-			std::cout << fila << std::endl;
-			std::string data[] = {"a", "b", "c", "d"};
+			auto fila = file[i];
+			std::string data[] = { fila["uuid"], "b", "c", "d" };
 			historial.push_back(Compra::load(data));
 		}
 

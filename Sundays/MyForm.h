@@ -75,12 +75,6 @@ namespace Sundays {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ prueba;
 
-
-
-
-
-
-
 		   System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
@@ -296,36 +290,44 @@ namespace Sundays {
 		carta->FlatAppearance->BorderSize = 0;
 		btn_login->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 		btn_login->FlatAppearance->BorderSize = 0;
-		for (int i = 0; i < 10; ++i)
-		{
-			cout << productos->at(i).getNombre()<<endl;
+		for (int i = 0; i < 10; ++i) {
+			Producto producto = productos->at(i);
+
 			Button^ newbtn = gcnew Button();
 			newbtn->Size = System::Drawing::Size(190, 190);
-			newbtn->Text =gcnew String(productos->at(i).getNombre().c_str());
+			newbtn->Text = gcnew String(producto.getNombre().c_str());
+			newbtn->Font = gcnew System::Drawing::Font(newbtn->Font->FontFamily, 14, System::Drawing::FontStyle::Bold);
+			newbtn->ForeColor = System::Drawing::Color::White;
+			newbtn->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			newbtn->Location = Point(x,y);
+			newbtn->Name = gcnew String(producto.getCodigo().c_str());
+
+			String^ filename = gcnew String(( "imagenes\\" + producto.getFilename()).c_str());
+			newbtn->Image = Drawing::Image::FromFile(filename);
+			
+			newbtn->Click += gcnew EventHandler(this, &MyForm::agregarCarrito);
+
 			pnl_contenedor->Controls->Add(newbtn);
-			if (i <= 3)
-			{
+
+			if (i <= 3) {
 				x += dx;
-			}
-			else
-			{
+			} else {
 				cont++;
-				if (cont==1)
-				{
+				if (cont==1) {
 					y += dy;
 					x = 90;
-				}
-				else {
+				} else {
 					x += dx;
 				}
 			}
-			
 		}
-	
 	}
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+	private:
+		void MyForm::agregarCarrito(Object^ sneder, EventArgs^ e) {
+			//carritoCompras->agregar();
+		}
 	private: System::Void MyForm_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 		if (cookies->Visible==true)
 		{

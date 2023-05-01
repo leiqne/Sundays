@@ -10,8 +10,9 @@ MiVector<Producto>* Funciones::CargarProductos(string path ){
         string cod = file[i]["Codigo"];
         string nombre= file[i]["Producto"];
         string categoria = file[i]["Categoria"];
+        string filename = file[i]["imagen"];
         float precio = stoi(string(file[i]["Precio"]).c_str());
-        prods->push_back(Producto(cod, nombre, categoria, precio));
+        prods->push_back(Producto(cod, nombre, categoria, filename, precio));
     }
 
     return prods;
