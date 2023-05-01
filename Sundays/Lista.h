@@ -55,8 +55,8 @@ public:
         ++size;
     }
 
-    void bubbleSort_V2(function<bool(Nodo*, Nodo*)> operador) {                 //COMPLEJIDAD ALGORITMICA DEL METODO
-                                                                                                                             //O(N^2) 
+    void bubbleSort_V2(std::function<bool(T*, T*)> operador) {                 //COMPLEJIDAD ALGORITMICA DEL METODO
+                                        //cambie el el Nodo* por- T*                                                                                                          //O(N^2) 
         bool intercambiado;                                                                                    //PORQUE HAY 2 FOR ANIDADOS
         do { 
             Nodo<T>* ptr1 = new Nodo<T>(e);

@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <functional>
 
 template <class T>
 class MiVector {
@@ -23,8 +24,10 @@ public:
         if (indice < 0 || indice >= m_tamano) throw std::out_of_range("Índice fuera de los límites del vector");
         return m_elementos[indice];
     }
-
-    void order(function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO
+    T& at(size_t pos) {
+        return m_elementos[pos];
+    }
+    void order(std::function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO
                                                                                                                                                             //O(N^2) PORQUE HAY 2 FOR ANIDADOS
         bool ordenado; 
         for (int i = 0; i < m_elementos.size() - 1; i++) {

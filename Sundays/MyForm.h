@@ -61,6 +61,7 @@ namespace Sundays {
 		Cliente* cliente = new Cliente();
 		Graphics^ gr;
 		Color SelectedColor = Color::FromArgb(250, 250, 250);
+		
 
 
 	private: System::Windows::Forms::TextBox^ cookies;
@@ -264,6 +265,8 @@ namespace Sundays {
 			   this->Controls->Add(this->pictureBox3);
 			   this->Controls->Add(this->pictureBox2);
 			   this->Controls->Add(this->pnl_contenedor);
+			   this->MaximizeBox = false;
+			   this->MinimizeBox = false;
 			   this->Name = L"MyForm";
 			   this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			   this->Text = L"MyForm";
@@ -282,6 +285,7 @@ namespace Sundays {
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		int x = 260; int y = 400;  int dx = 60;
 		pnl_contenedor->BackColor = Color::Transparent;
 		cookies->BorderStyle = System::Windows::Forms::BorderStyle::None;
 		aceptar_c->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -292,11 +296,16 @@ namespace Sundays {
 		carta->FlatAppearance->BorderSize = 0;
 		btn_login->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 		btn_login->FlatAppearance->BorderSize = 0;
-		for (int i = 0; i < 200; i++)
+		for (int i = 0; i < 10; ++i)
 		{
-	
-			prueba->Text += System::Convert::ToString(i)+"\n";
+			Button^ newbtn = gcnew Button();
+			auto a = productos[i];
+			cout<<productos->at(i).getNombre();
+			/*newbtn->Text =gcnew String(a.at(i).getNombre().c_str());
+			newbtn->Location = Point(x+dx,y);*/
+			y += 60;
 		}
+	
 	}
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
