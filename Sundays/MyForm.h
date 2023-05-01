@@ -298,10 +298,9 @@ namespace Sundays {
 		btn_login->FlatAppearance->BorderSize = 0;
 		for (int i = 0; i < 10; ++i)
 		{
-			cout << productos->at(i).getNombre()<<endl;
 			Button^ newbtn = gcnew Button();
 			newbtn->Size = System::Drawing::Size(190, 190);
-			newbtn->Text =gcnew String(productos->at(i).getNombre().c_str());
+			newbtn->Text =gcnew String(productos->at(i).getNombre().c_str())+"\n"+"Precio: S/ " + gcnew String(System::Convert::ToString(productos->at(i).getPrecio()));
 			newbtn->Location = Point(x,y);
 			pnl_contenedor->Controls->Add(newbtn);
 			if (i <= 3)
