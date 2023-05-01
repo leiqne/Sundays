@@ -24,7 +24,8 @@ public:
         return m_elementos[indice];
     }
 
-    void order(vector<MiVector> vector, function<bool(MiVector, MiVector)>q) { 
+    void order(vector<MiVector> vector, function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO
+                                                                                                                                                            //O(N^2) PORQUE HAY 2 FOR ANIDADOS
         bool ordenado; 
         for (int i = 0; i < m_elementos.size() - 1; i++) {
             ordenado = true;
