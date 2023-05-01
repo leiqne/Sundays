@@ -1,33 +1,33 @@
-Codigo,Producto,Categoria,Precio
-AC001,Aros de cebolla,Entradas,19.9
-NS002,Nachos supremos,Entradas,26.9
-AP003,Alitas de pollo,Entradas,29.9
-HF004,Hamburguesa Fridays,Platos principales,44.9
-FP005,Fajitas de pollo,Platos principales,49.9
-CC006,Costillas de cerdo,Platos principales,54.9
-BC007,Brownie de chocolate,Postres,19.9
-CF008,Cheesecake de fresa,Postres,21.9
-HS009,Helado sundae,Postres,15.9
-ML010,Margarita de limón,Bebidas,27.9
-MM011,Mojito de menta,Bebidas,29.9
-LF012,Limonada de fresa,Bebidas,16.9
-EC013,Ensalada César con pollo,Platos principales,39.9
-PQ014,Papas fritas con queso,Entradas,24.9
-QP015,Quesadillas de pollo,Entradas,34.9
-PP016,Pizza de pepperoni,Platos principales,42.9
-EC017,Ensalada de camarones,Platos principales,49.9
-SQ018,Sandwich de carne y queso,Platos principales,38.9
-EF019,Ensalada de frutas,Postres,16.9
-FV020,Flan de vainilla,Postres,17.9
-HC021,Helado de chocolate,Postres,14.9
-DF022,Daiquiri de fresa,Bebidas,25.9
-MM023,Margarita de mango,Bebidas,29.9
-CC024,Cerveza Corona,Bebidas,16.9
-PS025,Pisco Sour,Bebidas,32.9
-GT026,Gin Tonic,Bebidas,35.9
-CC027,Coca-Cola,Bebidas,8.9
-AM028,Agua mineral sin gas,Bebidas,6.9
-LF029,Limonada frozen,Bebidas,19.9
-CA030,Café americano,Bebidas,9.9
-TD031,Té helado de durazno,Bebidas,11.9
-BC032,Brochetas de camarones,Entradas,39.9
+Codigo,Producto,Categoria,Precio,imagen
+AC001,Aros de cebolla,Entradas,19.9,imagen1.jpg
+NS002,Nachos supremos,Entradas,26.9,imagen2.jpg
+AP003,Alitas de pollo,Entradas,29.9,imagen3.jpg
+HF004,Hamburguesa Fridays,Platos principales,44.9,imagen4.jpg
+FP005,Fajitas de pollo,Platos principales,49.9,imagen5.jpg
+CC006,Costillas de cerdo,Platos principales,54.9,imagen6.jpg
+BC007,Brownie de chocolate,Postres,19.9,imagen7.jpg
+CF008,Cheesecake de fresa,Postres,21.9,imagen8.jpg
+HS009,Helado sundae,Postres,15.9,imagen9.jpg
+ML010,Margarita de limón,Bebidas,27.9,imagen10.jpg
+MM011,Mojito de menta,Bebidas,29.9,imagen11.jpg
+LF012,Limonada de fresa,Bebidas,16.9,imagen12.jpg
+EC013,Ensalada César con pollo,Platos principales,39.9,imagen13.jpg
+PQ014,Papas fritas con queso,Entradas,24.9,imagen14.jpg
+QP015,Quesadillas de pollo,Entradas,34.9,imagen15.jpg
+PP016,Pizza de pepperoni,Platos principales,42.9,imagen16.jpg
+EC017,Ensalada de camarones,Platos principales,49.9,imagen17.jpg
+SQ018,Sandwich de carne y queso,Platos principales,38.9,imagen18.jpg
+EF019,Ensalada de frutas,Postres,16.9,imagen19.jpg
+FV020,Flan de vainilla,Postres,17.9,imagen20.jpg
+HC021,Helado de chocolate,Postres,14.9,imagen21.jpg
+DF022,Daiquiri de fresa,Bebidas,25.9,imagen22.jpg
+MM023,Margarita de mango,Bebidas,29.9,imagen23.jpg
+CC024,Cerveza Corona,Bebidas,16.9,imagen24.jpg
+PS025,Pisco Sour,Bebidas,32.9,imagen25.jpg
+GT026,Gin Tonic,Bebidas,35.9,imagen26.jpg
+CC027,Coca-Cola,Bebidas,8.9,imagen27.jpg
+AM028,Agua mineral sin gas,Bebidas,6.9,imagen28.jpg
+LF029,Limonada frozen,Bebidas,19.9,imagen29.jpg
+CA030,Café americano,Bebidas,9.9,imagen30.jpg
+TD031,Té helado de durazno,Bebidas,11.9,imagen31.jpg
+BC032,Brochetas de camarones,Entradas,39.9,imagen32.jpg

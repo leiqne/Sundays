@@ -63,5 +63,17 @@ public:
         cout << "nullptr";
     }
 
+    void push_back(T e) {
+        Nodo<T>* _new = new Nodo<T>(e);
+        if (tail != nullptr) {
+            tail->next = _new;
+            _new->back = tail;
+        }
+        else start = _new;
+        
+        tail = _new;
+        ++size;
+    }
+
 };
 #endif // DEBUG
