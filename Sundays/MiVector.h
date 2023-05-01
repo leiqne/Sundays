@@ -9,7 +9,7 @@ private:
     int m_tamano, m_capacidad;
 public:
     MiVector() : m_elementos(nullptr), m_tamano(0), m_capacidad(0) {};
-    ~MiVector() { delete[] m_elementos; }
+    ~MiVector() { /*delete[] m_elementos;*/ }
     void push_back(const T&);
     void remove(const T&);
     void remove_if(const T&, bool (*f)(T&, T&));
@@ -44,7 +44,7 @@ public:
             if (ordenado) break;
         }
     }
-    T buscadorT(function<bool(T)>buscador) {
+    T buscadorT(std::function<bool(T)>buscador) {
         for (int i = 0; i < m_elementos.size(); i++) {
             if (buscador(m_elementos[i])) return m_elementos[i];
         }

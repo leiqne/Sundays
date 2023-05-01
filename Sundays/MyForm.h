@@ -285,7 +285,7 @@ namespace Sundays {
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		int x = 260; int y = 400;  int dx = 60;
+		int x = 90; int y = 350, cont = 0, dx=250 , dy=240;
 		pnl_contenedor->BackColor = Color::Transparent;
 		cookies->BorderStyle = System::Windows::Forms::BorderStyle::None;
 		aceptar_c->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -298,12 +298,29 @@ namespace Sundays {
 		btn_login->FlatAppearance->BorderSize = 0;
 		for (int i = 0; i < 10; ++i)
 		{
+			cout << productos->at(i).getNombre()<<endl;
 			Button^ newbtn = gcnew Button();
-			auto a = productos[i];
-			cout<<productos->at(i).getNombre();
-			/*newbtn->Text =gcnew String(a.at(i).getNombre().c_str());
-			newbtn->Location = Point(x+dx,y);*/
-			y += 60;
+			newbtn->Size = System::Drawing::Size(190, 190);
+			newbtn->Text =gcnew String(productos->at(i).getNombre().c_str());
+			newbtn->Location = Point(x,y);
+			pnl_contenedor->Controls->Add(newbtn);
+			if (i <= 3)
+			{
+				x += dx;
+			}
+			else
+			{
+				cont++;
+				if (cont==1)
+				{
+					y += dy;
+					x = 90;
+				}
+				else {
+					x += dx;
+				}
+			}
+			
 		}
 	
 	}
@@ -328,7 +345,7 @@ private: System::Void aceptar_c_Click(System::Object^ sender, System::EventArgs^
 	aceptar_c->Visible = false;
 	cookies->Visible = false;
 	infocookies->Visible = false;
-	this->ClientSize = System::Drawing::Size(1372, 760);
+	this->ClientSize = System::Drawing::Size(1372, 770);
 }
 private: System::Void infocookies_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ mensaje = "Cuando ingresas a un sitio online, es comun que se genere y almacene un archivo llamado cookie en tu navegador. Las cookies almacenan informaci�n especifica de un usuario, como datos de autentificaci�n que te ayudan a mantener registrado en tus p�ginas web favoritas.\n\nTe recomendamos limpiar las cookies de tu navegador de forma regular, en especial si notas inconvenientes al ingresar y navegar por p�ginas web.\n\nChrome:\nAbre Google Chorme,\nHaz clic en el icono m�s en la esquina superior derecha,\nHaz clic en la configuraci�n,\nEn la parte inferior de la p�gina, haz clic en configuraci�n avanzada,\nBajo Privacidad y Seguridad, haz clic en Configuraci�n de Contenido,\nBajo Cookies, haz clic en ver todas las cookies,\nIngresa Fridays, en el buscar cookies,\nHaz clic en quitar,\nHacer clic en listo.";
