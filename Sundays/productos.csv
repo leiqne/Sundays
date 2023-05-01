@@ -1,33 +1,161 @@
-Codigo,Producto,Categoria,Precio,imagen
-AC001,Aros de cebolla,Entradas,19.9,imagen1.jpg
-NS002,Nachos supremos,Entradas,26.9,imagen2.jpg
-AP003,Alitas de pollo,Entradas,29.9,imagen3.jpg
-HF004,Hamburguesa Fridays,Platos principales,44.9,imagen4.jpg
-FP005,Fajitas de pollo,Platos principales,49.9,imagen5.jpg
-CC006,Costillas de cerdo,Platos principales,54.9,imagen6.jpg
-BC007,Brownie de chocolate,Postres,19.9,imagen7.jpg
-CF008,Cheesecake de fresa,Postres,21.9,imagen8.jpg
-HS009,Helado sundae,Postres,15.9,imagen9.jpg
-ML010,Margarita de limón,Bebidas,27.9,imagen10.jpg
-MM011,Mojito de menta,Bebidas,29.9,imagen11.jpg
-LF012,Limonada de fresa,Bebidas,16.9,imagen12.jpg
-EC013,Ensalada César con pollo,Platos principales,39.9,imagen13.jpg
-PQ014,Papas fritas con queso,Entradas,24.9,imagen14.jpg
-QP015,Quesadillas de pollo,Entradas,34.9,imagen15.jpg
-PP016,Pizza de pepperoni,Platos principales,42.9,imagen16.jpg
-EC017,Ensalada de camarones,Platos principales,49.9,imagen17.jpg
-SQ018,Sandwich de carne y queso,Platos principales,38.9,imagen18.jpg
-EF019,Ensalada de frutas,Postres,16.9,imagen19.jpg
-FV020,Flan de vainilla,Postres,17.9,imagen20.jpg
-HC021,Helado de chocolate,Postres,14.9,imagen21.jpg
-DF022,Daiquiri de fresa,Bebidas,25.9,imagen22.jpg
-MM023,Margarita de mango,Bebidas,29.9,imagen23.jpg
-CC024,Cerveza Corona,Bebidas,16.9,imagen24.jpg
-PS025,Pisco Sour,Bebidas,32.9,imagen25.jpg
-GT026,Gin Tonic,Bebidas,35.9,imagen26.jpg
-CC027,Coca-Cola,Bebidas,8.9,imagen27.jpg
-AM028,Agua mineral sin gas,Bebidas,6.9,imagen28.jpg
-LF029,Limonada frozen,Bebidas,19.9,imagen29.jpg
-CA030,Café americano,Bebidas,9.9,imagen30.jpg
-TD031,Té helado de durazno,Bebidas,11.9,imagen31.jpg
-BC032,Brochetas de camarones,Entradas,39.9,imagen32.jpg
+,Codigo,Producto,Categoria,Precio,imagen
+0,AC001,Aros de cebolla,Entradas,19.9,imagen1.jpg
+1,NS002,Nachos supremos,Entradas,26.9,imagen2.jpg
+2,AP003,Alitas de pollo,Entradas,29.9,imagen3.jpg
+3,HF004,Hamburguesa Fridays,Platos principales,44.9,imagen4.jpg
+4,FP005,Fajitas de pollo,Platos principales,49.9,imagen5.jpg
+5,CC006,Costillas de cerdo,Platos principales,54.9,imagen6.jpg
+6,BC007,Brownie de chocolate,Postres,19.9,imagen7.jpg
+7,CF008,Cheesecake de fresa,Postres,21.9,imagen8.jpg
+8,HS009,Helado sundae,Postres,15.9,imagen9.jpg
+9,ML010,Margarita de limon,Bebidas,27.9,imagen10.jpg
+10,MM011,Mojito de menta,Bebidas,29.9,imagen11.jpg
+11,LF012,Limonada de fresa,Bebidas,16.9,imagen12.jpg
+12,EC013,Ensalada Cesar con pollo,Platos principales,39.9,imagen13.jpg
+13,PQ014,Papas fritas con queso,Entradas,24.9,imagen14.jpg
+14,QP015,Quesadillas de pollo,Entradas,34.9,imagen15.jpg
+15,PP016,Pizza de pepperoni,Platos principales,42.9,imagen16.jpg
+16,EC017,Ensalada de camarones,Platos principales,49.9,imagen17.jpg
+17,SQ018,Sandwich de carne y queso,Platos principales,38.9,imagen18.jpg
+18,EF019,Ensalada de frutas,Postres,16.9,imagen19.jpg
+19,FV020,Flan de vainilla,Postres,17.9,imagen20.jpg
+20,HC021,Helado de chocolate,Postres,14.9,imagen21.jpg
+21,DF022,Daiquiri de fresa,Bebidas,25.9,imagen22.jpg
+22,MM023,Margarita de mango,Bebidas,29.9,imagen23.jpg
+23,CC024,Cerveza Corona,Bebidas,16.9,imagen24.jpg
+24,PS025,Pisco Sour,Bebidas,32.9,imagen25.jpg
+25,GT026,Gin Tonic,Bebidas,35.9,imagen26.jpg
+26,CC027,Coca-Cola,Bebidas,8.9,imagen27.jpg
+27,AM028,Agua mineral sin gas,Bebidas,6.9,imagen28.jpg
+28,LF029,Limonada frozen,Bebidas,19.9,imagen29.jpg
+29,CA030,Cafe americano,Bebidas,9.9,imagen30.jpg
+30,TD031,Te helado de durazno,Bebidas,11.9,imagen31.jpg
+31,BC032,Brochetas de camarones,Entradas,39.9,imagen32.jpg
+32,FA025,Fingers de pollo,Entradas,24.9,imagen33.jpg
+33,CE026,Chips de camote,Entradas,18.9,imagen34.jpg
+34,PA027,Palitos de mozarella,Entradas,23.9,imagen35.jpg
+35,SP028,Palomitas de camarones,Entradas,29.9,imagen36.jpg
+36,TO029,Tostones con guacamole,Entradas,21.9,imagen37.jpg
+37,AV030,Avocado toast,Entradas,26.9,imagen38.jpg
+38,BL031,Ensalada de atun,Entradas,28.9,imagen39.jpg
+39,VE032,Vegetales asados,Entradas,22.9,imagen40.jpg
+40,BR033,Brochetas de pollo,Entradas,25.9,imagen41.jpg
+41,CQ034,Ceviche de quinoa,Entradas,27.9,imagen42.jpg
+42,RO035,Rollitos primavera,Entradas,23.9,imagen43.jpg
+43,CM036,Camarones al coco,Entradas,31.9,imagen44.jpg
+44,ME037,Mejillones a la marinera,Entradas,29.9,imagen45.jpg
+45,TO038,Tomates rellenos,Entradas,26.9,imagen46.jpg
+46,FR039,Frituras de malanga,Entradas,18.9,imagen47.jpg
+47,CO040,Cordero al horno,Platos principales,55.9,imagen48.jpg
+48,PE041,Pechuga de pollo al grill,Platos principales,45.9,imagen49.jpg
+49,PA042,Pasta Alfredo con camarones,Platos principales,49.9,imagen50.jpg
+50,LA043,Lasña de carne,Platos principales,42.9,imagen51.jpg
+51,CH044,Churrasco con chimichurri,Platos principales,57.9,imagen52.jpg
+52,SO045,Sopa de tomate,Platos principales,31.9,imagen53.jpg
+53,PU046,Puerco asado,Platos principales,49.9,imagen54.jpg
+54,AJ047,Ajiaco de pollo,Platos principales,39.9,imagen55.jpg
+55,AR048,Arroz frito con vegetales,Platos principales,37.9,imagen56.jpg
+56,BO049,Bollo de pescado,Platos principales,53.9,imagen57.jpg
+57,PE050,Pescado a la plancha,Platos principales,49.9,imagen58.jpg
+58,PA051,Parrillada mixta,Platos principales,59.9,imagen59.jpg
+59,SP052,Spaghetti a la bolognesa,Platos principales,42.9,imagen60.jpg
+60,CO053,Coctel de camarones,Platos principales,45.9,imagen61.jpg
+61,VE054,Vegetales salteados con pollo,Platos principales,49.9,imagen62.jpg
+62,FA055,Fajitas de res,Platos principales,47.9,imagen63.jpg
+63,PA056,Pizza de hawaiana,Platos principales,44.9,imagen64.jpg
+64,CA057,Calamari a la romana,Entradas,26.9,imagen65.jpg
+65,CR058,Croquetas de pollo,Entradas,21.9,imagen66.jpg
+66,EN025,Ensalada de espinacas,Platos principales,38.9,imagen67.jpg
+67,PZ026,Pizza de vegetales,Platos principales,42.9,imagen68.jpg
+68,TM028,Tamales de pollo,Platos principales,34.9,imagen69.jpg
+69,CH029,Chilaquiles verdes,Platos principales,32.9,imagen70.jpg
+70,CE030,Ceviche de camarones,Platos principales,54.9,imagen71.jpg
+71,PR031,Paella de mariscos,Platos principales,59.9,imagen72.jpg
+72,TA032,Tacos al pastor,Platos principales,29.9,imagen73.jpg
+73,TP033,Tortilla de patata,Platos principales,36.9,imagen74.jpg
+74,LC034,Lomo saltado,Platos principales,48.9,imagen75.jpg
+75,AF035,Arroz frito,Platos principales,37.9,imagen76.jpg
+76,PL036,Pollo a la plancha,Platos principales,42.9,imagen77.jpg
+77,SL037,Salmon a la parrilla,Platos principales,56.9,imagen78.jpg
+78,CP038,Camarones a la plancha,Platos principales,64.9,imagen79.jpg
+79,BA039,Bacalao al ajo,Platos principales,59.9,imagen80.jpg
+80,CL040,Clam chowder,Platos principales,46.9,imagen81.jpg
+81,CA041,Calamares fritos,Entradas,29.9,imagen82.jpg
+82,PR042,Provolone a la parrilla,Entradas,22.9,imagen83.jpg
+83,CS043,Croquetas de jamon,Entradas,21.9,imagen84.jpg
+84,TT044,Tostones con guacamole,Entradas,24.9,imagen85.jpg
+85,TJ045,Tiras de pollo con jalapeño,Entradas,28.9,imagen86.jpg
+86,AD046,Albondigas de res,Entradas,27.9,imagen87.jpg
+87,PT047,Pan de ajo,Entradas,16.9,imagen88.jpg
+88,SG048,Sopa de guisantes,Entradas,18.9,imagen89.jpg
+89,CB049,Croissant con bacon y huevo,Entradas,22.9,imagen90.jpg
+90,FT050,Fondue de queso,Entradas,32.9,imagen91.jpg
+91,CH051,Churros con chocolate,Postres,18.9,imagen92.jpg
+92,TP052,Tiramisu de pistacho,Postres,25.9,imagen93.jpg
+93,AF053,Arroz con leche,Postres,14.9,imagen94.jpg
+94,FL054,Flan de coco,Postres,16.9,imagen95.jpg
+95,NF055,Natillas de vainilla,Postres,15.9,imagen96.jpg
+96,TS056,Tarta de Santiago,Postres,19.9,imagen97.jpg
+97,PC057,Pastel de chocolate,Postres,24.9,imagen98.jpg
+98,SS076,Salmon a la parrilla,Platos principales,59.9,imagen99.jpg
+99,PP077,Pasta primavera,Platos principales,49.9,imagen100.jpg
+100,CA078,Canelones,Platos principales,52.9,imagen101.jpg
+101,FC079,Fideos con carne,Platos principales,45.9,imagen102.jpg
+102,VC080,Vegetales al vapor,Platos principales,39.9,imagen103.jpg
+103,PC081,Pastel de carne,Platos principales,44.9,imagen104.jpg
+104,AG082,Aguacate relleno,Entradas,24.9,imagen105.jpg
+105,GP083,Gambas al ajillo,Entradas,32.9,imagen106.jpg
+106,CG084,Croquetas de jamón,Entradas,22.9,imagen107.jpg
+107,QG085,Queso fundido con chorizo,Entradas,28.9,imagen108.jpg
+108,CT086,Camote frito,Entradas,18.9,imagen109.jpg
+109,BB087,Budín de banana,Postres,18.9,imagen110.jpg
+110,CP088,Crepes de plátano,Postres,21.9,imagen111.jpg
+111,PM089,Pie de manzana,Postres,19.9,imagen112.jpg
+112,FC090,Flan de coco,Postres,16.9,imagen113.jpg
+113,PC091,Pastel de chocolate,Postres,22.9,imagen114.jpg
+114,PM092,Pay de mango,Postres,19.9,imagen115.jpg
+115,LP093,Limonada de piña,Bebidas,16.9,imagen116.jpg
+116,NT094,Nestea helado,Bebidas,19.9,imagen117.jpg
+117,LM095,Limonada natural,Bebidas,15.9,imagen118.jpg
+118,PF096,Piña colada,Bebidas,25.9,imagen119.jpg
+119,SM097,Sangria, Bebidas,32.9,imagen120.jpg
+120,JB098,Jugo de arándano,Bebidas,16.9,imagen121.jpg
+121,AB099,Agua mineral,Bebidas,10.9,imagen122.jpg
+122,SS100,Sopa de cebolla,Entradas,16.9,imagen123.jpg
+123,PP101,Pinchos de pollo,Entradas,26.9,imagen124.jpg
+124,AP102,Alitas picantes,Entradas,32.9,imagen125.jpg
+125,AS103,Asado de tira,Platos principales,54.9,imagen126.jpg
+126,LP104,Lomo a la parrilla,Platos principales,59.9,imagen127.jpg
+127,PL105,Pizza de la casa,Platos principales,42.9,imagen128.jpg
+128,ES106,Ensalada de espinaca,Platos principales,38.9,imagen129.jpg
+129,GC107,Gazpacho andaluz,Platos principales,34.9,imagen130.jpg
+130,ZP108,Zapallitos rellenos,Platos principales,49.9,imagen131.jpg
+131,CN109,Consomé,Entradas,16.9,imagen132.jpg
+132,ET110,Empanadas de ternera,Entradas,24.9,imagen133.jpg
+133,TP111,Tomates rellenos,Entradas,28.9,imagen134.jpg
+134,AS101,Arroz con pollo,Platos principales,42.9,imagen135.jpg
+135,ES102,Espagueti a la boloñesa,Platos principales,45.9,imagen136.jpg
+136,PR103,Parrilla mixta,Platos principales,56.9,imagen137.jpg
+137,LA104,Lasaña de verduras,Platos principales,49.9,imagen138.jpg
+138,CH105,Chuleta de cerdo,Platos principales,54.9,imagen139.jpg
+139,FA106,Flautas de pollo,Entradas,29.9,imagen140.jpg
+140,TA107,Tacos al pastor,Entradas,34.9,imagen141.jpg
+141,CA108,Calamares a la romana,Entradas,39.9,imagen142.jpg
+142,MU109,Muffins de arándanos,Postres,19.9,imagen143.jpg
+143,BA110,Banana split,Postres,21.9,imagen144.jpg
+144,CH111,Churros con chocolate,Postres,15.9,imagen145.jpg
+145,LL112,Limonada natural,Bebidas,16.9,imagen146.jpg
+146,AJ113,Agua de jamaica,Bebidas,14.9,imagen147.jpg
+147,ME115,Mezcal,Bebidas,69.9,imagen148.jpg
+148,RE116,Ron,Bebidas,49.9,imagen149.jpg
+149,TE117,Tequila,Bebidas,89.9,imagen150.jpg
+150,VI118,Vino tinto,Bebidas,59.9,imagen151.jpg
+151,GU119,Gusanos de maguey,Bebidas,25.9,imagen152.jpg
+152,FR120,Frappé de vainilla,Bebidas,26.9,imagen153.jpg
+153,TO121,Tostones con guacamole,Entradas,24.9,imagen154.jpg
+154,AL122,Albóndigas en salsa de tomate,Platos principales,49.9,imagen155.jpg
+155,PO123,Pollo a la naranja,Platos principales,42.9,imagen156.jpg
+156,VE124,Verduras asadas con queso feta,Platos principales,39.9,imagen157.jpg
+157,BO125,Bollos de canela,Postres,18.9,imagen158.jpg
+158,CU126,Cupcakes de chocolate,Postres,22.9,imagen159.jpg
+159,GA127,Galletas con chips de chocolate,Postres,16.9,imagen160.jpg

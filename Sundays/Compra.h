@@ -7,6 +7,7 @@
 #include <functional>
 
 class Compra {
+protected:
 	string filename = "compras.csv";
 	float monto;
 	std::string UUID, fecha;
