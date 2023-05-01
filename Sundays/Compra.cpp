@@ -19,7 +19,7 @@ void Compra::Guardar(){
 	oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");
 	string fecha = oss.str();
 
-	vector<string> row = { UUID, cliente.getUUID(), to_string(monto), fecha};
+	vector<string> row = { UUID, cliente.getUUID(), carrito.exportar(), to_string(monto), fecha };
 	
 	file.addRow(file.rowCount(), row);
 	file.sync();

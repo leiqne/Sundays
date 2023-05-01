@@ -14,33 +14,33 @@ public:
     void remove_if(const T&, bool (*f)(T&, T&));
     int size() const { return m_tamano; }
 
-    T& operator[](int i) {
+    T& operator[](int indice) {
         if (indice < 0 || indice >= m_tamano) throw std::out_of_range("Índice fuera de los límites del vector");
         return m_elementos[indice];
     }
 
-    const T& operator[](int i) const {
+    const T& operator[](int indice) const {
         if (indice < 0 || indice >= m_tamano) throw std::out_of_range("Índice fuera de los límites del vector");
         return m_elementos[indice];
     }
 
-    void order(vector<MiVector> vector, function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO
-                                                                                                                                                            //O(N^2) PORQUE HAY 2 FOR ANIDADOS
-        bool ordenado; 
-        for (int i = 0; i < m_elementos.size() - 1; i++) {
-            ordenado = true;
-            for (int j = 0; j < m_elementos.size() - 1; j++) {
-                if (q(m_elementos[j], m_elementos[j + 1]))
-                {
-                    auto aux = m_elementos[j];
-                    m_elementos[j] = m_elementos[j + 1];
-                    m_elementos[j + 1] = aux;
-                    ordenado = false;
-                }
-            }
-            if (ordenado) break;
-        }
-    }
+    //void order(vector<MiVector> vector, function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO
+    //                                                                                                                                                        //O(N^2) PORQUE HAY 2 FOR ANIDADOS
+    //    bool ordenado; 
+    //    for (int i = 0; i < m_elementos.size() - 1; i++) {
+    //        ordenado = true;
+    //        for (int j = 0; j < m_elementos.size() - 1; j++) {
+    //            if (q(m_elementos[j], m_elementos[j + 1]))
+    //            {
+    //                auto aux = m_elementos[j];
+    //                m_elementos[j] = m_elementos[j + 1];
+    //                m_elementos[j + 1] = aux;
+    //                ordenado = false;
+    //            }
+    //        }
+    //        if (ordenado) break;
+    //    }
+    //}
 
     class Iterator {
     private:

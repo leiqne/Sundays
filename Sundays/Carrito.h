@@ -1,6 +1,7 @@
 #pragma once
 #include "MiVector.h"
 #include "Producto.h"
+#include <iostream>
 
 struct Item {
 	Producto producto;
@@ -18,7 +19,7 @@ public:
 
 	void agregar(const Producto&);
 	void eliminarProd(const Producto&);
+	std::string exportar();
 	float total() const;
-
 	operator MiVector<Item>() const;
 };

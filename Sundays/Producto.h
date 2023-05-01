@@ -12,7 +12,7 @@ public:
 	std::string getNombre();
 	std::string getCategoria();
 	std::string getCodigo();
-	float getPrecio();
+	float getPrecio() const;
 	bool operator==(const Producto& prod) const {
 		return codigo == prod.codigo;
 	}

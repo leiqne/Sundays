@@ -13,6 +13,7 @@ protected:
 	std::string UUID, fecha;
 	Cliente cliente;
 	CarritoDeCompras carrito;
+	static Compra load(const std::string*);
 public:
 	Compra();
 	Compra(Cliente client, const CarritoDeCompras&);

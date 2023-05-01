@@ -55,23 +55,23 @@ public:
         ++size;
     }
 
-    void bubbleSort_V2(function<bool(Nodo*, Nodo*)> operador) {                 //COMPLEJIDAD ALGORITMICA DEL METODO
-                                                                                                                             //O(N^2) 
-        bool intercambiado;                                                                                    //PORQUE HAY 2 FOR ANIDADOS
-        do { 
-            Nodo<T>* ptr1 = start; 
-            intercambiado = false;
-            while (ptr1->next != nullptr) {
-                if (operador(ptr1, ptr1->next)) {
-                    auto aux = ptr1->elemento; 
-                     ptr1->elemento = ptr1->next->elemento; 
-                     ptr1->next->elemento = aux; 
-                    intercambiado = true;
-                }
-                ptr1 = ptr1->next;
-            }
-        } while (intercambiado);
-    }
+    //void bubbleSort_V2(function<bool(Nodo*, Nodo*)> operador) {                 //COMPLEJIDAD ALGORITMICA DEL METODO
+    //                                                                                                                         //O(N^2) 
+    //    bool intercambiado;                                                                                    //PORQUE HAY 2 FOR ANIDADOS
+    //    do { 
+    //        Nodo<T>* ptr1 = start; 
+    //        intercambiado = false;
+    //        while (ptr1->next != nullptr) {
+    //            if (operador(ptr1, ptr1->next)) {
+    //                auto aux = ptr1->elemento; 
+    //                 ptr1->elemento = ptr1->next->elemento; 
+    //                 ptr1->next->elemento = aux; 
+    //                intercambiado = true;
+    //            }
+    //            ptr1 = ptr1->next;
+    //        }
+    //    } while (intercambiado);
+    //}
 
     void print() {
         Nodo<T>* tmp = start;

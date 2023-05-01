@@ -1,4 +1,5 @@
 #include "Carrito.h"
+using namespace std;
 
 CarritoDeCompras::CarritoDeCompras() = default;
 
@@ -24,4 +25,23 @@ void CarritoDeCompras::eliminarProd(const Producto& prod){
 			productos.remove(item);
 		else res->cant++;
 	}
+}
+
+float CarritoDeCompras::total() const {
+	int size = productos.size();
+	float monto_total = 0;
+	for (int i = 0; i < size; i++)
+		monto_total += productos[i].cant * productos[i].producto.getPrecio();
+	return monto_total;
+}
+
+string CarritoDeCompras::exportar() {
+	int size = productos.size();
+	string data;
+	for (int i = 0; i < size; i++) {
+		Item item = productos[i];
+		Producto prod = item.producto;
+		data += prod.getCodigo() + "/" + to_string(item.cant) + ";";
+	}
+	return data;
 }

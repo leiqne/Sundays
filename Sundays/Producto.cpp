@@ -8,4 +8,4 @@ Producto::Producto(array<string, 4> arr) : codigo(arr[0]), nombre(arr[1]), categ
 string Producto::getCodigo() { return codigo; }
 string Producto::getNombre() { return nombre; }
 string Producto::getCategoria() { return categoria; }
-float Producto::getPrecio() { return precio; }
+float Producto::getPrecio() const { return precio; }
