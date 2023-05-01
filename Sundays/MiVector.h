@@ -27,9 +27,9 @@ public:
     void order(function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO
                                                                                                                                                             //O(N^2) PORQUE HAY 2 FOR ANIDADOS
         bool ordenado; 
-        for (int i = 0; i < m_elementos.size() - 1; i++) {
+        for (int i = 0; i < m_elementos.size(); i++) {
             ordenado = true;
-            for (int j = 0; j < m_elementos.size() - 1; j++) {
+            for (int j = 0; j < m_elementos.size(); j++) {
                 if (q(m_elementos[j], m_elementos[j + 1]))
                 {
                     auto aux = m_elementos[j];
@@ -40,6 +40,13 @@ public:
             }
             if (ordenado) break;
         }
+    }
+    T buscadorT(function<bool(T)>buscador) {
+        for (int i = 0; i < m_elementos.size(); i++) {
+            if (buscador(m_elementos[i])) return m_elementos[i];
+        }
+        cout << "Elemento no encontrado" << endl;
+        return T{};
     }
 
     class Iterator {

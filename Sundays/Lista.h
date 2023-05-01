@@ -55,25 +55,33 @@ public:
         ++size;
     }
 
-    void bubbleSort_V2(function<bool(Nodo*, Nodo*)> operador) {                 //COMPLEJIDAD ALGORITMICA DEL METODO
+    void bubbleSort_V2(function<bool(Nodo<T>*, Nodo<T>*)> operador) {                 //COMPLEJIDAD ALGORITMICA DEL METODO
                                                                                                                              //O(N^2) 
         bool intercambiado;                                                                                    //PORQUE HAY 2 FOR ANIDADOS
         do { 
-            Nodo<T>* ptr1 = new Nodo<T>(e);
-            ptr1 = start;
+            Nodo<T>* ptr1 = start;
             intercambiado = false;
             while (ptr1->next != nullptr) {
                 if (operador(ptr1, ptr1->next)) {
-                    auto aux = ptr1->elemento; 
-                     ptr1->elemento = ptr1->next->elemento; 
-                     ptr1->next->elemento = aux; 
+                    auto aux = ptr1->element; 
+                     ptr1->element = ptr1->next->element; 
+                     ptr1->next->element = aux; 
                     intercambiado = true;
                 }
                 ptr1 = ptr1->next;
             }
         } while (intercambiado);
     }
-
+    T buscador(function<T(Nodo<T>*)>buscador) { 
+        Nodo<T>* tmp = start;
+        while (tmp != nullptr)
+        {
+            if (buscador(tmp)) return tmp->element;
+            tmp = tmp->next;
+        }
+        cout << "Elemento no encontrado" << endl;
+        return T{};
+    }
     void print() {
         Nodo<T>* tmp = start;
         while (tmp != nullptr) {
@@ -87,7 +95,7 @@ public:
         Nodo<T>* _new = new Nodo<T>(e);
         if (tail != nullptr) {
             tail->next = _new;
-            _new->back = tail;
+            _new->prev = tail;
         }
         else start = _new;
         
