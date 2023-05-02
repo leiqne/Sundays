@@ -100,5 +100,8 @@
     <None Include="usuarios.csv">
       <Filter>Archivos de recursos</Filter>
     </None>
+    <None Include="historial.csv">
+      <Filter>Archivos de recursos</Filter>
+    </None>
   </ItemGroup>
 </Project>

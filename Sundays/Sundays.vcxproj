@@ -166,6 +166,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="historial.csv" />
     <None Include="productos.csv" />
     <None Include="usuarios.csv" />
   </ItemGroup>
