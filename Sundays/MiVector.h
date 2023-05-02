@@ -28,15 +28,15 @@ public:
         return m_elementos[pos];
     }
     void order(std::function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO
-                                                                                                                                                            //O(N^2) PORQUE HAY 2 FOR ANIDADOS
+                                                                                                                        //O(N^2) PORQUE HAY 2 FOR ANIDADOS
         bool ordenado; 
-        for (int i = 0; i < m_elementos.size(); i++) {
+        for (int i = 0; i < size(); i++) {
             ordenado = true;
-            for (int j = 0; j < m_elementos.size(); j++) {
-                if (q(m_elementos[j], m_elementos[j + 1]))
+            for (int j = 0; j < size(); j++) {
+                if (q(m_elementos[j], m_elementos[j + 1])) 
                 {
-                    auto aux = m_elementos[j];
-                    m_elementos[j] = m_elementos[j + 1];
+                    auto aux = m_elementos[j]; 
+                    m_elementos[j] = m_elementos[j + 1]; 
                     m_elementos[j + 1] = aux;
                     ordenado = false;
                 }
@@ -45,7 +45,7 @@ public:
         }
     }
     T buscadorT(std::function<bool(T)>buscador) {
-        for (int i = 0; i < m_elementos.size(); i++) {
+        for (int i = 0; i < size(); i++) {
             if (buscador(m_elementos[i])) return m_elementos[i];
         }
         cout << "Elemento no encontrado" << endl;
