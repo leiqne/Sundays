@@ -1,10 +1,34 @@
 #include "Carrito.h"
+#include <sstream>
 using namespace std;
 
 CarritoDeCompras::CarritoDeCompras() = default;
 
-void CarritoDeCompras::agregar(const Producto& prod) {
+CarritoDeCompras CarritoDeCompras::load(MiVector<Producto>& productos, string data) {
+	istringstream iss(data);
+	string linea;
+	CarritoDeCompras carrito;
+	while (getline(iss, linea, ';')) {
+		stringstream ss(linea);
+		
+		string codigo, cant_str;
+		getline(ss, codigo);
+		getline(ss, cant_str);
+
+		int cant = stoi(cant_str);
+		Producto producto = productos.buscadorT([codigo](Producto prod) -> bool { return prod.getCodigo() == codigo; });
+		carrito.agregar(Item{ producto, cant });
+	}
+	return carrito;
+}
+
+void CarritoDeCompras::agregar(const Item& item) {
+	productos.push_back(item);
+}
+
+void CarritoDeCompras::agregar(const Producto& prod) { //const hace que el objeto no cambie su valor
 	Item item{ prod, 1 };
+
 	auto res = productos.find(item, [](Item& elemento, Item& buscado){
 		return elemento.producto.getCodigo() == buscado.producto.getCodigo();
 	});

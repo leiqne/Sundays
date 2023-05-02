@@ -16,8 +16,9 @@ private:
 	MiVector<Item> productos;
 public:
 	CarritoDeCompras();
-
+	static CarritoDeCompras load(MiVector<Producto>& productos, std::string data);
 	void agregar(const Producto&);
+	void agregar(const Item&);
 	void eliminarProd(const Producto&);
 	std::string exportar();
 	float total() const;

@@ -4,6 +4,8 @@
 #include <ctime>
 #include <iomanip>
 
+using namespace std;
+
 Compra::Compra() = default;
 
 Compra::Compra(Cliente client, const CarritoDeCompras& carrito_) : cliente(client), carrito(carrito_) {};
@@ -19,8 +21,14 @@ void Compra::Guardar(){
 	oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");
 	string fecha = oss.str();
 
-	vector<string> row = { UUID, cliente.getUUID(), carrito.exportar(), to_string(monto), fecha };
+	auto row = { UUID, cliente.getUUID(), carrito.exportar(), to_string(monto), fecha };
 	
 	file.addRow(file.rowCount(), row);
 	file.sync();
+}
+
+Compra Compra::load(MiVector<Producto>& productos, string const data []) {
+	string uuid_cliente = data[1];
+	Cliente cliente = Cliente();
+	return Compra(cliente, CarritoDeCompras::load(productos, data[2]));
 }
