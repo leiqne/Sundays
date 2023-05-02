@@ -52,6 +52,13 @@ public:
         return T{};
     }
 
+    T buscar(T const elemento) {
+        for (int i = 0; i < size(); i++) {
+            if (elemento == m_elementos[i]) return m_elementos[i];
+        }
+        return T{};
+    }
+
     class Iterator {
     private:
         T* m_elemento; // puntero al elemento actual

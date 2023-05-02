@@ -305,7 +305,7 @@ namespace Sundays {
 
 			String^ filename = gcnew String(( "imagenes\\" + producto.getFilename()).c_str());
 			newbtn->Image = Drawing::Image::FromFile(filename);
-			
+			//newbtn->atributo = producto;
 			newbtn->Click += gcnew EventHandler(this, &MyForm::agregarCarrito);
 
 			pnl_contenedor->Controls->Add(newbtn);
@@ -326,8 +326,17 @@ namespace Sundays {
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private:
-		void MyForm::agregarCarrito(Object^ sneder, EventArgs^ e) {
-			//carritoCompras->agregar();
+		void MyForm::agregarCarrito(Object^ sender, EventArgs^ e) {
+			if (cliente->getUUID().empty()) {
+				MessageBox::Show("Debe iniciar sesion para comprar");
+				return;
+			}
+
+			Button^ boton = dynamic_cast<Button^>(sender);
+			string codigo = marshal_as<std::string>(boton->Name);
+
+			Producto productoBuscado = productos->buscar(Producto(codigo, "", "", "", 0));
+			carritoCompras->agregar(productoBuscado);
 		}
 	private: System::Void MyForm_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 		if (cookies->Visible==true)

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <array>
+#include <Windows.h>
 
 class Producto {
 	std::string codigo, nombre, categoria, filename;
