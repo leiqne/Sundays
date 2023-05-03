@@ -69,3 +69,7 @@ string CarritoDeCompras::exportar() {
 	}
 	return data;
 }
+
+CarritoDeCompras::operator MiVector<Item>() const {
+	return productos;
+}
