@@ -2503,6 +2503,9 @@
   <data name="cookies.Text" xml:space="preserve">
     <value>Sundays utiliza cookies propias y de terceros, las cookies que utilizamos son escencial para el funcionamiento de determinadas funciones de la web y ya ha sido activada, si lo deseas eliminar y bloquear todas las cookies de esta web, aunque de hacerlo es posible que algunos elementos no funcionen</value>
   </data>
+  <metadata name="infocookies.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btn_login.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAYABgAAD/4QCqRXhpZgAATU0AKgAAAAgAAwE7AAIAAAAFAAAAModpAAQAAAAB

@@ -234,7 +234,7 @@ namespace Sundays {
 	}
 
 private: System::Void btn_aceptar_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (textUsuario->Text->Trim()->Equals("") || textContra->Text->Trim()->Equals("")) 
+	if (textUsuario->Text->Trim()->Equals("") || textContra->Text->Trim()->Equals("")) //para que no hayan espacios en blanco
 		MessageBox::Show("Debe llenar todos los campos");
 	else {
 		string email = marshal_as<std::string>(textUsuario->Text);

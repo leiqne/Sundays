@@ -177,7 +177,7 @@ namespace Sundays {
 			   this->infocookies->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->infocookies->Font = (gcnew System::Drawing::Font(L"Impact", 9.75F, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->infocookies->ForeColor = System::Drawing::Color::Transparent;
+			   this->infocookies->ForeColor = System::Drawing::Color::White;
 			   this->infocookies->Location = System::Drawing::Point(158, 815);
 			   this->infocookies->Name = L"infocookies";
 			   this->infocookies->Size = System::Drawing::Size(162, 23);
@@ -266,7 +266,6 @@ namespace Sundays {
 				   static_cast<System::Int32>(static_cast<System::Byte>(250)));
 			   this->ClientSize = System::Drawing::Size(1372, 850);
 			   this->Controls->Add(this->btn_carrocompras);
-			   this->Controls->Add(this->cookies);
 			   this->Controls->Add(this->btnPerfil);
 			   this->Controls->Add(this->btn_login);
 			   this->Controls->Add(this->infocookies);
@@ -275,6 +274,7 @@ namespace Sundays {
 			   this->Controls->Add(this->pictureBox3);
 			   this->Controls->Add(this->pictureBox2);
 			   this->Controls->Add(this->pnl_contenedor);
+			   this->Controls->Add(this->cookies);
 			   this->MaximizeBox = false;
 			   this->MinimizeBox = false;
 			   this->Name = L"MyForm";
@@ -397,7 +397,7 @@ private: System::Void btn_carrocompras_Click(System::Object^ sender, System::Eve
 		MessageBox::Show("Debe iniciar sesion para poder ver el carrito de compras");
 		return;
 	}
-	Carritodecompras^ formaux = gcnew Carritodecompras();
+	Carritodecompras^ formaux = gcnew Carritodecompras(carritoCompras);
 	formaux->ShowDialog();
 }
 };
