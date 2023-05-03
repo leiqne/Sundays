@@ -17,6 +17,7 @@ void Compra::Guardar(){
 	auto t = std::time(nullptr);
 	auto tm = *std::localtime(&t);
 
+	// REFERENCIA https://es.stackoverflow.com/questions/32046/mostrar-fecha-y-hora-actual-en-c
 	std::ostringstream oss;
 	oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");//para formatea la fecha
 	string fecha = oss.str();

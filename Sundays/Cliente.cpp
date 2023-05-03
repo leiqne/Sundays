@@ -34,7 +34,7 @@ bool Cliente::registro(string email, string name, string pass) {
 
 		vector<string> data = { UUID, email, name, pass };
 		file.addRow(size, data);
-		file.sync();
+		file.sync(); // guarda los datos en el csv
 
 		nombre = name, password = pass;
 		this->email = email;

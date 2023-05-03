@@ -59,7 +59,7 @@ public:
         return T{};
     }
     //REFERENCIADO A https://studylib.es/doc/6792582/clase-de-iteradores-en-c--
-    class Iterator {
+    class Iterator { // crea un iterador para poder recorrer los elementos usando punteros 
     private:
         T* m_elemento; // puntero al elemento actual
     public:
@@ -73,43 +73,43 @@ public:
         Iterator(T* elemento) : m_elemento(elemento) {}
 
         // Operador de dereferenciación
-        reference operator*() const {
+        reference operator*() const { // pasa de un puntero a un objeto normal
             return *m_elemento;
         }
 
         // Operador de acceso a miembro
-        pointer operator->() const {
+        pointer operator->() const { //-> . 
             return m_elemento;
         }
 
-        // Operador de incremento prefijo
-        Iterator& operator++() {
+        // Operador de incremento prefijo ++algo
+        Iterator& operator++() {// te devuelve el elemento siguiente
             ++m_elemento;
             return *this;
         }
 
         // Operador de incremento sufijo
-        Iterator operator++(int) {
+        Iterator operator++(int) {// algo++
             Iterator temp = *this;
             ++(*this);
             return temp;
         }
 
         // Operador de decremento prefijo
-        Iterator& operator--() {
+        Iterator& operator--() { //--variable
             --m_elemento;
             return *this;
         }
 
         // Operador de decremento sufijo
-        Iterator operator--(int) {
+        Iterator operator--(int) { //variable --
             Iterator temp = *this;
             --(*this);
             return temp;
         }
 
         // Operador de suma
-        Iterator operator+(difference_type n) const {
+        Iterator operator+(difference_type n) const { // it + 3  
             return Iterator(m_elemento + n);
         }
 
@@ -119,12 +119,12 @@ public:
         }
 
         // Operador de igualdad
-        bool operator==(const Iterator& otro) const {
+        bool operator==(const Iterator& otro) const {// it == begin 
             return m_elemento == otro.m_elemento;
         }
 
         // Operador de desigualdad
-        bool operator!=(const Iterator& otro) const {
+        bool operator!=(const Iterator& otro) const { // it != end
             return !(*this == otro);
         }
     };
@@ -191,12 +191,12 @@ void MiVector<T>::remove_if(const T& elemento, bool (*comparador)(T&, T&)) {
 template <typename T>
 typename MiVector<T>::Iterator 
 MiVector<T>::find(const T& elemento) {
-    for (auto it = begin(); it != end(); ++it) {
-        if (*it == elemento) {
+    for (auto it = begin(); it != end(); ++it) { // hace uso de los iteradores para recorrer el vector
+        if (*it == elemento) { 
             return it;  // se encontró el elemento, devolver el iterador correspondiente
         }
     }
-    return end();  // no se encontró el elemento, devolver el iterador "end"
+    return end();  // no se encontró el elemento, devolver el iterador "end" [1,2,3, null]
 }
 
 template<typename T>

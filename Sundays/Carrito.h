@@ -6,7 +6,8 @@
 struct Item {
 	Producto producto;
 	int cant = 1;
-	bool operator==(const Item& item) const {
+	// sobrecarga de operador ==
+	bool operator==(const Item& item) const { // sirve apra compara el producto y no tenenr varios productos iguales
 		return item.producto == producto;
 	}
 };

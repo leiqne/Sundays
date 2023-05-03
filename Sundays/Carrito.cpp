@@ -4,7 +4,7 @@ using namespace std;
 
 CarritoDeCompras::CarritoDeCompras() = default;
 
-CarritoDeCompras CarritoDeCompras::load(MiVector<Producto>& productos, string data) {
+CarritoDeCompras CarritoDeCompras::load(MiVector<Producto>& productos, string data) { // para leer el historial y generar el carrito de compras
 	istringstream iss(data);
 	string linea;
 	CarritoDeCompras carrito;
@@ -12,7 +12,7 @@ CarritoDeCompras CarritoDeCompras::load(MiVector<Producto>& productos, string da
 		stringstream ss(linea);
 		
 		string codigo, cant_str;
-		getline(ss, codigo);
+		getline(ss, codigo, '/');
 		getline(ss, cant_str);
 
 		int cant = stoi(cant_str);
@@ -28,13 +28,12 @@ void CarritoDeCompras::agregar(const Item& item) {
 
 void CarritoDeCompras::agregar(const Producto& prod) { //const hace que el objeto no cambie su valor
 	Item item{ prod, 1 };																							//1
-	auto res = productos.find(item, [](Item& elemento, Item& buscado){				//5
+	auto res = productos.find(item, [](Item& elemento, Item& buscado){ // busca el producto en el carrito de compras				//5
 		return elemento.producto.getCodigo() == buscado.producto.getCodigo();
 	});
 	if (res == productos.end()) 																			//2 + maxinterna
 		productos.push_back(item);																	//1
 	else {
-		std::cout << "ya van: " << res->cant << std::endl;									//4
 		res->cant++;																							//2
 	}
 }
@@ -47,7 +46,7 @@ void CarritoDeCompras::eliminarProd(const Producto& prod){
 	if (res != productos.end()) {
 		if (res->cant == 1)
 			productos.remove(item);
-		else res->cant++;
+		else res->cant--;
 	}
 }
 
