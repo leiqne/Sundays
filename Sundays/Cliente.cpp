@@ -10,16 +10,15 @@ string Cliente::getUUID() { return UUID; }
 string Cliente::getNombre() { return nombre; }
 
 bool Cliente::login(string email, string pass) {
-	csv::Parser file = csv::Parser(filename);
-	int size = file.rowCount();
-	pass = Cripto::SHA256(pass).toString();
-	for (int i = 0; i < size; i++) {
-		if (file[i]["email"] == email && file[i]["password"] == pass) {
-			nombre = file[i]["nombre"];
-			UUID = file[i]["uuid"];
-			this->email = file[i]["email"];
-			password = file[i]["password"];
-			
+	csv::Parser file = csv::Parser(filename);													//2
+	int size = file.rowCount();																		//2
+	pass = Cripto::SHA256(pass).toString();												//3
+	for (int i = 0; i < size; i++) {																	//1+n(1+intena+2)
+		if (file[i]["email"] == email && file[i]["password"] == pass) {		//7 + maxinterna
+			nombre = file[i]["nombre"];															//3
+			UUID = file[i]["uuid"];																	//3
+			this->email = file[i]["email"];															//4
+			password = file[i]["password"];														//3			
 			return true;
 		}
 	}

@@ -5,7 +5,7 @@
 
 namespace Cripto {
 	std::string generateUUID();
-
+	//REFERENCIADO https://github.com/System-Glitch/SHA256/blob/master/src/SHA256.cpp
 	class SHA256 {
 
 	public:

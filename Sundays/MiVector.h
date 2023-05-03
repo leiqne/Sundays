@@ -58,7 +58,7 @@ public:
         }
         return T{};
     }
-
+    //REFERENCIADO A https://studylib.es/doc/6792582/clase-de-iteradores-en-c--
     class Iterator {
     private:
         T* m_elemento; // puntero al elemento actual
@@ -138,20 +138,20 @@ public:
 
 template<class T>
 void MiVector<T>::push_back(const T& elemento) {
-    if (m_tamano >= m_capacidad) {
-        int nueva_capacidad = (m_capacidad == 0) ? 1 : m_capacidad * 2;
-        T* nuevos_elementos = new T[nueva_capacidad];
+    if (m_tamano >= m_capacidad) {                                                              //1 + maxInterna
+        int nueva_capacidad = (m_capacidad == 0) ? 1 : m_capacidad * 2;     //3
+        T* nuevos_elementos = new T[nueva_capacidad];                               //2
+        
+        for (int i = 0; i < m_tamano; i++)                                                          //1 + n(1 + interna+2)
+            nuevos_elementos[i] = m_elementos[i];                                           //3
 
-        for (int i = 0; i < m_tamano; i++)
-            nuevos_elementos[i] = m_elementos[i];
+        delete[] m_elementos;                                                                           //1
 
-        delete[] m_elementos;
-
-        m_elementos = nuevos_elementos;
-        m_capacidad = nueva_capacidad;
+        m_elementos = nuevos_elementos;                                                     //1
+        m_capacidad = nueva_capacidad;                                                       //1
     }
 
-    m_elementos[m_tamano++] = elemento;
+    m_elementos[m_tamano++] = elemento;                                               //2
 }
 
 template <class T>

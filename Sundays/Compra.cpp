@@ -28,7 +28,7 @@ void Compra::Guardar(){
 }
 
 Compra Compra::load(MiVector<Producto>& productos, string const data []) {
-	string uuid_cliente = data[1];
-	Cliente cliente = Cliente();
+	string uuid_cliente = data[1];													//2
+	Cliente cliente = Cliente();														//2
 	return Compra(cliente, CarritoDeCompras::load(productos, data[2]));
 }

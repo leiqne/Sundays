@@ -47,12 +47,12 @@ public:
         ++size;
     }
     void push_front(T e) {
-        Nodo<T>* _new = new Nodo<T>(e);
-        if (start != nullptr) {
-            _new->next = start;
+        Nodo<T>* _new = new Nodo<T>(e);     //2
+        if (start != nullptr) {                                 //1 + maxInterna
+            _new->next = start;                             //2
         }
-        start = _new;
-        ++size;
+        start = _new;                                           //1
+        ++size;                                                   //1
     }
 
 

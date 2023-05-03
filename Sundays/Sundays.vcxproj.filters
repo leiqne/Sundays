@@ -92,9 +92,6 @@
     <ClInclude Include="Inicio sesion1.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Carrito de compras.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
