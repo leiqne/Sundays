@@ -17,6 +17,7 @@ void Compra::Guardar(){
 	auto t = std::time(nullptr);					//hora
 	auto tm = *std::localtime(&t);			//para saber la hora actual
 
+	// REFERENCIA https://es.stackoverflow.com/questions/32046/mostrar-fecha-y-hora-actual-en-c
 	std::ostringstream oss;
 	oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");//para formatear la fecha cada vez que se haga una nueva compra
 	string fecha = oss.str();
