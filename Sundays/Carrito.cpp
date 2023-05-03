@@ -27,15 +27,15 @@ void CarritoDeCompras::agregar(const Item& item) {
 }
 
 void CarritoDeCompras::agregar(const Producto& prod) { //const hace que el objeto no cambie su valor
-	Item item{ prod, 1 };
-
-	auto res = productos.find(item, [](Item& elemento, Item& buscado){
+	Item item{ prod, 1 };																							//1
+	auto res = productos.find(item, [](Item& elemento, Item& buscado){				//5
 		return elemento.producto.getCodigo() == buscado.producto.getCodigo();
 	});
-	if (res == productos.end()) productos.push_back(item);
+	if (res == productos.end()) 																			//2 + maxinterna
+		productos.push_back(item);																	//1
 	else {
-		std::cout << "ya van: " << res->cant << std::endl;
-		res->cant++;
+		std::cout << "ya van: " << res->cant << std::endl;									//4
+		res->cant++;																							//2
 	}
 }
 

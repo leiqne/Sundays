@@ -151,7 +151,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Producto.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="TipoPago.h" />
   </ItemGroup>
   <ItemGroup>
