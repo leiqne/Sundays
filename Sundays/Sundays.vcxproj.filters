@@ -45,6 +45,9 @@
     <ClCompile Include="Inicio sesion1.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Carrito de compras.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -90,6 +93,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Carrito de compras.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,7 @@
 #include "TipoPago.h"
 #include <string>
 #include "Inicio sesion1.h"
+#include "Carrito de compras.h"
 
 namespace Sundays {
 
@@ -74,6 +75,7 @@ namespace Sundays {
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ prueba;
+	private: System::Windows::Forms::Button^ btn_carrocompras;
 
 		   System::ComponentModel::Container^ components;
 
@@ -96,6 +98,7 @@ namespace Sundays {
 			   this->pnl_contenedor = (gcnew System::Windows::Forms::Panel());
 			   this->prueba = (gcnew System::Windows::Forms::Label());
 			   this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			   this->btn_carrocompras = (gcnew System::Windows::Forms::Button());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			   this->pnl_contenedor->SuspendLayout();
@@ -243,6 +246,18 @@ namespace Sundays {
 			   this->pictureBox1->TabIndex = 0;
 			   this->pictureBox1->TabStop = false;
 			   // 
+			   // btn_carrocompras
+			   // 
+			   this->btn_carrocompras->BackColor = System::Drawing::Color::Transparent;
+			   this->btn_carrocompras->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btn_carrocompras.BackgroundImage")));
+			   this->btn_carrocompras->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->btn_carrocompras->Location = System::Drawing::Point(1061, 30);
+			   this->btn_carrocompras->Name = L"btn_carrocompras";
+			   this->btn_carrocompras->Size = System::Drawing::Size(37, 36);
+			   this->btn_carrocompras->TabIndex = 13;
+			   this->btn_carrocompras->UseVisualStyleBackColor = false;
+			   this->btn_carrocompras->Click += gcnew System::EventHandler(this, &MyForm::btn_carrocompras_Click);
+			   // 
 			   // MyForm
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -250,6 +265,7 @@ namespace Sundays {
 			   this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(250)), static_cast<System::Int32>(static_cast<System::Byte>(250)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(250)));
 			   this->ClientSize = System::Drawing::Size(1372, 850);
+			   this->Controls->Add(this->btn_carrocompras);
 			   this->Controls->Add(this->cookies);
 			   this->Controls->Add(this->btnPerfil);
 			   this->Controls->Add(this->btn_login);
@@ -375,6 +391,14 @@ private: System::Void pnl_contenedor_SizeChanged(System::Object^ sender, System:
 }
 private: System::Void pnl_contenedor_Resize(System::Object^ sender, System::EventArgs^ e) {
 	this->Invalidate();
+}
+private: System::Void btn_carrocompras_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (cliente->getUUID().empty()) {//pa saber si ha iniciado sesion
+		MessageBox::Show("Debe iniciar sesion para poder ver el carrito de compras");
+		return;
+	}
+	Carritodecompras^ formaux = gcnew Carritodecompras();
+	formaux->ShowDialog();
 }
 };
 }
