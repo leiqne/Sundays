@@ -9,7 +9,7 @@
 class Compra {
 protected:
 	string filename = "historial.csv";
-	float monto;
+	float monto = 0;
 	std::string UUID, fecha;
 	Cliente cliente;
 	CarritoDeCompras carrito;

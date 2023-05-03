@@ -21,7 +21,7 @@ void Compra::Guardar(){
 	oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");//para formatea la fecha
 	string fecha = oss.str();
 
-	auto row = { UUID, cliente.getUUID(), carrito.exportar(), to_string(monto), fecha };
+	auto row = { UUID, cliente.getUUID(), carrito.exportar(), to_string(carrito.total()), fecha };
 	
 	file.addRow(file.rowCount(), row);
 	file.sync();
