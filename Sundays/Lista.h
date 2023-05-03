@@ -57,8 +57,8 @@ public:
 
 
     void bubbleSort_V2(function<bool(Nodo<T>*, Nodo<T>*)> operador) {                 //COMPLEJIDAD ALGORITMICA DEL METODO
-                                                                                                                             //O(N^2) 
-        bool intercambiado;                                                                                    //PORQUE HAY 2 FOR ANIDADOS
+     //ordenamiento burbuja                                                                                                                                       //O(N^2) 
+        bool intercambiado;                                                                                                    //PORQUE HAY 2 FOR ANIDADOS
         do { 
             Nodo<T>* ptr1 = start;
             intercambiado = false;

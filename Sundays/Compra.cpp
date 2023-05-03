@@ -28,7 +28,7 @@ void Compra::Guardar(){
 	file.sync();                                               //se agrega todos los datos al archivo
 }
 
-Compra Compra::load(MiVector<Producto>& productos, string const data []) {
+Compra Compra::load(MiVector<Producto>& productos, string const data []) {         //todavia no implementado
 	string uuid_cliente = data[1];													//2
 	Cliente cliente = Cliente();														//2
 	return Compra(cliente, CarritoDeCompras::load(productos, data[2]));

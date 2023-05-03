@@ -10,41 +10,37 @@ private:
 public:
     MiVector() : m_elementos(nullptr), m_tamano(0), m_capacidad(0) {};
     ~MiVector() { /*delete[] m_elementos;*/ }
-    void push_back(const T&);
-    void remove(const T&);
-    void remove_if(const T&, bool (*f)(T&, T&));
-    int size() const { return m_tamano; }
+    void push_back(const T&);                                                 //agregar
+    void remove(const T&);                                                      //eliminar
+    void remove_if(const T&, bool (*f)(T&, T&));                //eliminar con lambdas
+    int size() const { return m_tamano; }                                  //tamanio
 
-    T& operator[](int indice) {
+    T& operator[](int indice) {                                         //verificador de tamanio
         if (indice < 0 || indice >= m_tamano) throw std::out_of_range("Índice fuera de los límites del vector");
         return m_elementos[indice];
     }
 
-    const T& operator[](int indice) const {
+    const T& operator[](int indice) const {                         //verificador de tamanio
         if (indice < 0 || indice >= m_tamano) throw std::out_of_range("Índice fuera de los límites del vector");
         return m_elementos[indice];
     }
     T& at(size_t pos) {
         return m_elementos[pos];
     }
-    void order(std::function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO
-                                                                                                                        //O(N^2) PORQUE HAY 2 FOR ANIDADOS
-        bool ordenado; 
+    void order(std::function<bool(MiVector, MiVector)>q) {                          //COMPLEJIDAD ALGORITMICA DEL METODO O(N^2) PORQUE HAY 2 FOR ANIDADOS
+        //ordenamiento intercambio
         for (int i = 0; i < size(); i++) {
-            ordenado = true;
             for (int j = 0; j < size(); j++) {
                 if (q(m_elementos[j], m_elementos[j + 1])) 
                 {
                     auto aux = m_elementos[j]; 
                     m_elementos[j] = m_elementos[j + 1]; 
                     m_elementos[j + 1] = aux;
-                    ordenado = false;
                 }
             }
-            if (ordenado) break;
         }
     }
-    T buscadorT(std::function<bool(T)>buscador) {
+    T buscadorT(std::function<bool(T)>buscador) {                       //buscador con lambda
         for (int i = 0; i < size(); i++) {
             if (buscador(m_elementos[i])) return m_elementos[i];
         }
@@ -52,8 +48,8 @@ public:
         return T{};
     }
 
-    T buscar(T const elemento) {
-        for (int i = 0; i < size(); i++) {
+    T buscar(T const elemento) {                                                    //buscador elemento especifico
+        for (int i = 0; i < size(); i++) {  
             if (elemento == m_elementos[i]) return m_elementos[i];
         }
         return T{};
