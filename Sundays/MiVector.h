@@ -58,7 +58,7 @@ public:
         }
         return T{};
     }
-
+    //REFERENCIADO A https://studylib.es/doc/6792582/clase-de-iteradores-en-c--
     class Iterator {
     private:
         T* m_elemento; // puntero al elemento actual
