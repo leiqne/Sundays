@@ -397,7 +397,7 @@ private: System::Void btn_carrocompras_Click(System::Object^ sender, System::Eve
 		MessageBox::Show("Debe iniciar sesion para poder ver el carrito de compras");
 		return;
 	}
-	Carritodecompras^ formaux = gcnew Carritodecompras(carritoCompras);
+	Carritodecompras^ formaux = gcnew Carritodecompras(carritoCompras, cliente);
 	formaux->ShowDialog();
 }
 };

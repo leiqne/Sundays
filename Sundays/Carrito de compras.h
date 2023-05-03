@@ -1,5 +1,6 @@
 #pragma once
 #include "Carrito.h"
+#include "HistorialCompras.h"
 namespace Sundays {
 
 	using namespace System;
@@ -15,7 +16,7 @@ namespace Sundays {
 	public ref class Carritodecompras : public System::Windows::Forms::Form
 	{
 	public:
-		Carritodecompras(CarritoDeCompras* ccarro) :carro(ccarro)
+		Carritodecompras(CarritoDeCompras* ccarro, Cliente* cliente) :carro(ccarro), client(cliente)
 		{
 			InitializeComponent();
 			//
@@ -50,7 +51,9 @@ namespace Sundays {
 	private: System::Windows::Forms::Label^ lbl_anscant;
 	private: System::Windows::Forms::Label^ lbl_ansprecio;
 	private: System::Windows::Forms::Label^ lbl_total;
+	private: System::Windows::Forms::Button^ btn_pagar;
 		   CarritoDeCompras* carro;
+		   Cliente* client;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -67,6 +70,7 @@ namespace Sundays {
 			this->lbl_anscant = (gcnew System::Windows::Forms::Label());
 			this->lbl_ansprecio = (gcnew System::Windows::Forms::Label());
 			this->lbl_total = (gcnew System::Windows::Forms::Label());
+			this->btn_pagar = (gcnew System::Windows::Forms::Button());
 			this->pnl_carro->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -147,17 +151,32 @@ namespace Sundays {
 			this->lbl_total->AutoSize = true;
 			this->lbl_total->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lbl_total->Location = System::Drawing::Point(396, 252);
+			this->lbl_total->Location = System::Drawing::Point(396, 250);
 			this->lbl_total->Name = L"lbl_total";
 			this->lbl_total->Size = System::Drawing::Size(48, 20);
 			this->lbl_total->TabIndex = 7;
 			this->lbl_total->Text = L"Total:";
 			// 
+			// btn_pagar
+			// 
+			this->btn_pagar->BackColor = System::Drawing::Color::Maroon;
+			this->btn_pagar->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_pagar->ForeColor = System::Drawing::Color::White;
+			this->btn_pagar->Location = System::Drawing::Point(115, 244);
+			this->btn_pagar->Name = L"btn_pagar";
+			this->btn_pagar->Size = System::Drawing::Size(83, 34);
+			this->btn_pagar->TabIndex = 8;
+			this->btn_pagar->Text = L"Pagar";
+			this->btn_pagar->UseVisualStyleBackColor = false;
+			this->btn_pagar->Click += gcnew System::EventHandler(this, &Carritodecompras::btn_pagar_Click);
+			// 
 			// Carritodecompras
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(545, 281);
+			this->ClientSize = System::Drawing::Size(545, 295);
+			this->Controls->Add(this->btn_pagar);
 			this->Controls->Add(this->lbl_total);
 			this->Controls->Add(this->lbl_ansprecio);
 			this->Controls->Add(this->lbl_anscant);
@@ -190,5 +209,10 @@ namespace Sundays {
 		}
 		lbl_total->Text = "Total: " + tot.ToString("F2");
 	}
-	};
+	private: System::Void btn_pagar_Click(System::Object^ sender, System::EventArgs^ e) {
+		HistorialCompras historial=HistorialCompras(*client, *carro);
+		historial.Guardar();
+		MessageBox::Show("Su compra se ha realizado con exito");
+	}
+};
 }

@@ -8,6 +8,9 @@ class HistorialCompras : public Compra {
 	Lista<Compra> historial;
 public:
 	HistorialCompras() = default;
+	HistorialCompras(Cliente client, const CarritoDeCompras& carrito):Compra(client,carrito) {
+
+	}
 	Lista<Compra> load(MiVector<Producto>& productos, Cliente cliente) {
 		csv::Parser file = csv::Parser(filename);
 		int size = file.rowCount();
